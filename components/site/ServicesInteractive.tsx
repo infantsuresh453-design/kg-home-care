@@ -67,7 +67,7 @@ function normalize(
         name: item.name,
         short:
           "description" in item
-            ? (item as ServiceRecord).description ||
+            ? ((item as unknown) as ServiceRecord).description ||
               "Professional washing machine service."
             : (item as { short: string }).short,
         imgSrc:
