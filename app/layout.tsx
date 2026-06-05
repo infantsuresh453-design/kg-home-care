@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     template: "%s | KG Home Care",
   },
   description:
-    "KG Home Care: trusted washing machine repair, installation, deep cleaning and AMC service in Tuticorin for IFB, LG, Samsung, Bosch and Whirlpool.",
+    "KG Home Care: trusted washing machine repair, installation, deep cleaning and AMC service in Tuticorin.",
   authors: [{ name: "KG Home Care" }],
   openGraph: {
     siteName: "KG Home Care",

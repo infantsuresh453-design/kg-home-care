@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { updateSeoPageAction } from "@/lib/actions/cms";
 import { getSeoPageById } from "@/lib/cms";
 import { SeoPageForm } from "@/components/dashboard/SeoPageForm";
+import { FileText } from "lucide-react";
 
 type EditSeoPageProps = {
   params: Promise<{ id: string }>;
@@ -17,10 +18,15 @@ export default async function EditSeoPage({ params }: EditSeoPageProps) {
 
   return (
     <div className="space-y-6">
-      <section className="rounded-3xl border bg-white p-8 shadow-soft">
-        <h1 className="text-3xl font-bold tracking-tight">Edit SEO page</h1>
-        <p className="mt-2 text-muted-foreground">Update the landing page content, metadata, FAQ, testimonials, and publishing state.</p>
-      </section>
+      <div className="flex items-center gap-4">
+        <span className="grid h-10 w-10 place-items-center rounded-xl bg-violet-500/15 text-violet-400">
+          <FileText className="h-5 w-5" />
+        </span>
+        <div>
+          <h1 className="text-xl font-extrabold tracking-tight text-white">Edit SEO Page</h1>
+          <p className="text-sm text-slate-400">Update content, metadata, FAQ, testimonials, and publishing state.</p>
+        </div>
+      </div>
 
       <SeoPageForm action={updateSeoPageAction.bind(null, page.id)} initialData={page} submitLabel="Save changes" />
     </div>

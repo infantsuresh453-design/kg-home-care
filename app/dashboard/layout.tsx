@@ -2,13 +2,13 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getAdminSession } from "@/lib/auth";
 import { signOutAdmin } from "@/lib/actions/cms";
-import { LayoutDashboard, Users, FileText, LogOut, Wrench } from "lucide-react";
+import { Users, FileText, LogOut } from "lucide-react";
+import "ckeditor5/ckeditor5.css";
+import "./ckeditor.css";
 
 const NAV = [
-  { href: "/dashboard",           label: "Overview",      icon: LayoutDashboard },
   { href: "/dashboard/leads",     label: "Contact Leads", icon: Users           },
   { href: "/dashboard/seo-pages", label: "SEO Pages",     icon: FileText        },
-  { href: "/dashboard/services",  label: "Services",      icon: Wrench          },
 ];
 
 export default async function DashboardLayout({

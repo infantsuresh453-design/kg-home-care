@@ -9,8 +9,8 @@ import { waHref, bookingMessage, telHref, PHONE_DISPLAY } from "@/lib/contact";
 
 const NAV = [
   { href: "/",         label: "Home"     },
+  { href: "/about",    label: "About"    },
   { href: "/services", label: "Services" },
-  { href: "/faq",      label: "FAQ"      },
   { href: "/contact",  label: "Contact"  },
 ];
 
@@ -88,15 +88,12 @@ export function SiteHeader() {
               <Phone className="h-3.5 w-3.5" />
               Call Now
             </a>
-            <a
-              href={waHref(bookingMessage({}))}
-              target="_blank"
-              rel="noreferrer"
+            <Link
+              href="/contact"
               className="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2 text-[13px] font-semibold text-white shadow-[0_4px_14px_-2px_rgba(0,87,255,0.35)] transition-all hover:-translate-y-px hover:bg-primary/90"
             >
-              <WhatsAppIcon className="h-4 w-4" />
               Book Now
-            </a>
+            </Link>
           </div>
 
           {/* Hamburger */}

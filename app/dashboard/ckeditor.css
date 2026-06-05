@@ -1,0 +1,93 @@
+/* CKEditor Dark Theme Override */
+.ckeditor-dark .ck.ck-editor__editable {
+  min-height: 300px;
+  background: #1e293b !important;
+  color: #e2e8f0 !important;
+  border-color: #334155 !important;
+  border-radius: 0 0 12px 12px !important;
+}
+
+.ckeditor-dark .ck.ck-editor__editable h1 {
+  font-size: 2em !important;
+  font-weight: 800 !important;
+  margin: 0.5em 0 !important;
+}
+
+.ckeditor-dark .ck.ck-editor__editable h2 {
+  font-size: 1.5em !important;
+  font-weight: 700 !important;
+  margin: 0.5em 0 !important;
+}
+
+.ckeditor-dark .ck.ck-editor__editable h3 {
+  font-size: 1.25em !important;
+  font-weight: 700 !important;
+  margin: 0.4em 0 !important;
+}
+
+.ckeditor-dark .ck.ck-editor__editable h4 {
+  font-size: 1.1em !important;
+  font-weight: 600 !important;
+  margin: 0.4em 0 !important;
+}
+
+.ckeditor-dark .ck.ck-editor__editable p {
+  font-size: 0.875rem !important;
+  margin: 0.3em 0 !important;
+}
+
+.ckeditor-dark .ck.ck-editor__editable:focus {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2) !important;
+}
+
+.ckeditor-dark .ck.ck-toolbar {
+  background: #0f172a !important;
+  border-color: #334155 !important;
+  border-radius: 12px 12px 0 0 !important;
+}
+
+.ckeditor-dark .ck.ck-toolbar .ck-button {
+  color: #94a3b8 !important;
+}
+
+.ckeditor-dark .ck.ck-toolbar .ck-button:hover {
+  background: #1e293b !important;
+  color: #e2e8f0 !important;
+}
+
+.ckeditor-dark .ck.ck-toolbar .ck-button.ck-on {
+  background: #1e40af !important;
+  color: #fff !important;
+}
+
+.ckeditor-dark .ck.ck-editor__editable .ck-placeholder::before {
+  color: #64748b !important;
+}
+
+.ckeditor-dark .ck.ck-dropdown__panel {
+  background: #0f172a !important;
+  border-color: #334155 !important;
+}
+
+.ckeditor-dark .ck.ck-list__item .ck-button {
+  color: #94a3b8 !important;
+}
+
+.ckeditor-dark .ck.ck-list__item .ck-button:hover {
+  background: #1e293b !important;
+  color: #e2e8f0 !important;
+}
+
+.ckeditor-dark .ck.ck-list__item .ck-button.ck-on {
+  background: #1e40af !important;
+  color: #fff !important;
+}
+
+.ckeditor-dark .ck-source-editing-area textarea {
+  background: #0f172a !important;
+  color: #a5f3fc !important;
+  border-color: #334155 !important;
+  font-family: monospace;
+  min-height: 300px;
+}

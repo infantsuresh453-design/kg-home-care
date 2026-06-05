@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BUSINESS, PHONE_DISPLAY, SERVICES, telHref, waHref } from "@/lib/contact";
+import { BUSINESS, PHONE_DISPLAY, telHref, waHref } from "@/lib/contact";
 import { MapPin, Phone, Clock } from "lucide-react";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 
@@ -27,21 +27,18 @@ export function SiteFooter() {
           </div>
         </div>
 
-        {/* ── Services ── */}
+        {/* ── Quick Links ── */}
         <div>
-          <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-white/40">Services</h3>
+          <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-white/40">Quick Links</h3>
           <ul className="mt-4 space-y-2.5 text-sm">
-            {SERVICES.slice(0, 6).map((s) => (
-              <li key={s.slug}>
-                <Link href={`/services/${s.slug}`} className="text-white/55 transition-colors hover:text-white">
-                  {s.name}
-                </Link>
-              </li>
-            ))}
+            <li><Link href="/" className="text-white/55 hover:text-white">Home</Link></li>
+            <li><Link href="/services" className="text-white/55 hover:text-white">Services</Link></li>
+            <li><Link href="/about" className="text-white/55 hover:text-white">About Us</Link></li>
+            <li><Link href="/contact" className="text-white/55 hover:text-white">Contact</Link></li>
           </ul>
         </div>
 
-        {/* ── Location + nav ── */}
+        {/* ── Location ── */}
         <div>
           <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-white/40">Location</h3>
           <div className="mt-4 flex items-start gap-2.5 text-sm text-white/55">
@@ -52,13 +49,6 @@ export function SiteFooter() {
               {BUSINESS.address.city}, {BUSINESS.address.state}
             </span>
           </div>
-
-          <h3 className="mt-7 text-xs font-bold uppercase tracking-[0.18em] text-white/40">Links</h3>
-          <ul className="mt-4 flex gap-5 text-sm">
-            <li><Link href="/services" className="text-white/55 hover:text-white">Services</Link></li>
-            <li><Link href="/faq"      className="text-white/55 hover:text-white">FAQ</Link></li>
-            <li><Link href="/contact"  className="text-white/55 hover:text-white">Contact</Link></li>
-          </ul>
         </div>
       </div>
 

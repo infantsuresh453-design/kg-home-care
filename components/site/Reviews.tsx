@@ -37,7 +37,7 @@ const REVIEWS = [
     area: "Ettayapuram",
     date: "Mar 2025",
     rating: 5,
-    text: "Same-day Samsung repair, genuine spare part, 90-day warranty. KG Home Care is now our go-to service for anything washing machine.",
+    text: "Same-day repair, genuine spare part, 90-day warranty. KG Home Care is now our go-to service for anything washing machine.",
     color: "bg-rose-600",
   },
   {

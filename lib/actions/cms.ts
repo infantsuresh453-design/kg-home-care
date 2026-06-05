@@ -117,15 +117,21 @@ export async function createLeadAction(
     };
   }
 
+  const email = readNullableString(formData, "email");
+  const service = readNullableString(formData, "service");
+  const brand = readNullableString(formData, "brand");
+  const location = readNullableString(formData, "location");
+  const message = readNullableString(formData, "message");
+
   const supabase = await createServerSupabaseClient();
   const { error } = await supabase.from("leads").insert({
     name,
     phone,
-    email: readNullableString(formData, "email"),
-    service: readNullableString(formData, "service"),
-    brand: readNullableString(formData, "brand"),
-    location: readNullableString(formData, "location"),
-    message: readNullableString(formData, "message"),
+    email,
+    service,
+    brand,
+    location,
+    message,
     status: "New",
   });
 
@@ -138,9 +144,24 @@ export async function createLeadAction(
 
   revalidateLeads();
 
+  // Build WhatsApp redirect URL with lead info
+  const WHATSAPP_RAW = "918778838405";
+  const lines = [
+    "Hi KG Home Care, I'd like to book a washing machine service.",
+    "",
+    `Name: ${name}`,
+    `Phone: ${phone}`,
+    location ? `Location: ${location}` : null,
+    service ? `Service: ${service}` : null,
+    brand ? `Brand: ${brand}` : null,
+    message ? `Issue: ${message}` : null,
+  ].filter(Boolean);
+  const waMessage = lines.join("\n");
+  const waUrl = `https://wa.me/${WHATSAPP_RAW}?text=${encodeURIComponent(waMessage)}`;
+
   return {
     success: true,
-    message: "Thanks. Your request has been received.",
+    message: waUrl,
   };
 }
 

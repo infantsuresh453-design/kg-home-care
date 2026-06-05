@@ -72,7 +72,7 @@ const DETAIL: Record<string, { intro: string; includes: string[]; price: string 
   },
   "spare-parts": {
     intro:
-      "Genuine OEM spare parts for IFB, LG, Samsung, Bosch and Whirlpool — sourced and fitted by our technicians.",
+      "Genuine OEM spare parts for all major brands — sourced and fitted by our technicians.",
     includes: ["OEM-only parts", "Bill & warranty card", "Free fitting on most parts", "Wide stock for all brands"],
     price: "Quoted per part",
   },
@@ -132,8 +132,17 @@ export default async function ServiceDetailPage({ params }: Props) {
 
   return (
     <>
+      {/* Hero section with decorative elements */}
       <section className="relative overflow-hidden border-b border-border bg-radial-primary">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 md:grid-cols-2 md:py-24 lg:px-8">
+        {/* Dot grid */}
+        <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.35]" style={{ backgroundImage: "radial-gradient(#94a3b8 1px, transparent 1px)", backgroundSize: "30px 30px" }} />
+        {/* Floating shapes */}
+        <div className="pointer-events-none absolute -right-16 -top-16 h-60 w-60 rounded-full border-[3px] border-primary/10" />
+        <div className="pointer-events-none absolute right-20 top-20 h-16 w-16 rounded-full border-[3px] border-blue-200/25" />
+        <div className="pointer-events-none absolute -left-10 bottom-8 h-28 w-28 rotate-12 rounded-xl border-[3px] border-indigo-200/20" />
+        {/* Gradient orb */}
+        <div className="pointer-events-none absolute -right-20 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-primary/5 blur-[80px]" />
+        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 md:grid-cols-2 md:py-24 lg:px-8">
           <div>
             <Link href="/services" className="text-xs font-semibold uppercase tracking-widest text-primary hover:underline">
               ← All Services
@@ -180,7 +189,17 @@ export default async function ServiceDetailPage({ params }: Props) {
         </div>
       </section>
 
-      <Section eyebrow="What's Included" title={`Every ${service.name.toLowerCase()} visit includes:`}>
+      <div className="relative overflow-hidden">
+        {/* Dot grid */}
+        <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.45]" style={{ backgroundImage: "radial-gradient(#cbd5e1 1px, transparent 1px)", backgroundSize: "26px 26px" }} />
+        {/* Gradient orb */}
+        <div className="pointer-events-none absolute -left-32 top-1/3 h-80 w-80 rounded-full bg-blue-100/30 blur-[100px]" />
+        <div className="pointer-events-none absolute -right-20 bottom-0 h-60 w-60 rounded-full bg-indigo-100/25 blur-[80px]" />
+        {/* Floating shapes */}
+        <div className="pointer-events-none absolute right-16 top-12 h-24 w-24 rounded-full border-[3px] border-primary/10" />
+        <div className="pointer-events-none absolute left-10 bottom-10 h-16 w-16 rotate-45 rounded-md border-[3px] border-blue-200/25" />
+        <div className="pointer-events-none absolute right-1/3 bottom-16 h-20 w-20 rounded-full border-[3px] border-violet-200/20" />
+      <Section eyebrow="What's Included" title={`Every ${service.name.toLowerCase()} visit includes:`} className="relative">
         <ul className="grid gap-3 sm:grid-cols-2">
           {d.includes.map((item) => (
             <li key={item} className="flex items-center gap-3 rounded-2xl border border-border bg-card p-4 shadow-soft">
@@ -207,19 +226,31 @@ export default async function ServiceDetailPage({ params }: Props) {
           </div>
         </div>
       </Section>
+      </div>
 
       {"content" in service && service.content ? (
-        <Section eyebrow="Service details" title={`About ${service.name}`}>
-          <div
-            className="prose prose-slate max-w-none rounded-3xl border bg-card p-6 shadow-soft"
-            dangerouslySetInnerHTML={{ __html: service.content }}
-          />
-        </Section>
+        <div className="relative overflow-hidden bg-slate-50">
+          {/* Grid lines */}
+          <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.3]" style={{ backgroundImage: "linear-gradient(to right, #e2e8f0 1px, transparent 1px), linear-gradient(to bottom, #e2e8f0 1px, transparent 1px)", backgroundSize: "50px 50px" }} />
+          <div className="pointer-events-none absolute -left-20 top-1/3 h-60 w-60 rounded-full bg-indigo-100/25 blur-[80px]" />
+          <div className="pointer-events-none absolute right-10 top-8 h-20 w-20 rounded-full border-[3px] border-slate-300/40" />
+          <Section eyebrow="Service details" title={`About ${service.name}`} className="relative">
+            <div
+              className="prose prose-slate max-w-none rounded-3xl border bg-card p-6 shadow-soft"
+              dangerouslySetInnerHTML={{ __html: service.content }}
+            />
+          </Section>
+        </div>
       ) : null}
 
-      <Section>
-        <ContactCTA />
-      </Section>
+      <div className="relative overflow-hidden">
+        <div className="pointer-events-none absolute -right-32 top-1/2 h-60 w-60 -translate-y-1/2 rounded-full bg-blue-50/50 blur-[80px]" />
+        <div className="pointer-events-none absolute left-12 top-8 h-20 w-20 rounded-full border-2 border-primary/8" />
+        <div className="pointer-events-none absolute right-20 bottom-8 h-14 w-14 rotate-45 rounded-md border-2 border-indigo-200/20" />
+        <Section className="relative">
+          <ContactCTA />
+        </Section>
+      </div>
     </>
   );
 }

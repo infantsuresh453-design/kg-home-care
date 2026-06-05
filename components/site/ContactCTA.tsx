@@ -111,11 +111,6 @@ export function ContactCTA() {
               <span>{BUSINESS.hours}</span>
             </div>
           </div>
-
-          <div className="mt-6 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-center">
-            <p className="text-xs font-medium text-white/50">Average response time</p>
-            <p className="mt-0.5 text-xl font-black text-white">Under 15 min</p>
-          </div>
         </div>
       </div>
     </div>

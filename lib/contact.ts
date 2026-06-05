@@ -16,10 +16,10 @@ export const BUSINESS = {
 };
 
 // Use international format without "+" or spaces for wa.me links.
-export const PHONE_RAW = "919999999999"; // TODO: replace with real number
-export const WHATSAPP_RAW = "919999999999"; // TODO: replace with real number
+export const PHONE_RAW = "918778838405";
+export const WHATSAPP_RAW = "918778838405";
 
-export const PHONE_DISPLAY = "+91 99999 99999";
+export const PHONE_DISPLAY = "+91 87788 38405";
 
 export function telHref(): string {
   return `tel:+${PHONE_RAW}`;
@@ -50,7 +50,7 @@ export function bookingMessage(input: {
   return lines.join("\n");
 }
 
-export const BRANDS = ["IFB", "LG", "Samsung", "Bosch", "Whirlpool"] as const;
+export const BRANDS = [] as const;
 
 export const SERVICES = [
   {
@@ -110,7 +110,7 @@ export const SERVICES = [
   {
     slug: "spare-parts",
     name: "Spare Parts Replacement",
-    short: "Genuine OEM spare parts for IFB, LG, Samsung, Bosch, Whirlpool.",
+    short: "Genuine OEM spare parts for all major brands.",
     image: "pcb",
   },
 ] as const;
