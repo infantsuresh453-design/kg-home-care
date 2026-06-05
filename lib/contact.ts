@@ -5,8 +5,8 @@ export const BUSINESS = {
   name: "KG Home Care",
   tagline: "Washing Machine Service Centre in Tuticorin",
   address: {
-    line1: "7/1, Kovil Street",
-    line2: "Pudukkottai - 628103",
+    line1: "5A/394, Caldwell Colony 3rd Street",
+    line2: "Tuticorin – 628008",
     city: "Tuticorin",
     state: "Tamil Nadu",
     country: "India",
@@ -54,44 +54,44 @@ export const BRANDS = [] as const;
 
 export const SERVICES = [
   {
-    slug: "washing-machine-repair",
+    slug: "washing-machine-service",
     name: "Washing Machine Service",
     short: "Expert service for all front-load & top-load washing machines.",
-    image: "repair",
+    image: "washing_machine",
   },
   {
     slug: "installation",
     name: "Installation Service",
     short: "Safe, certified installation with hose, leveling & test cycle.",
-    image: "installation",
+    image: "installation_new",
   },
   {
     slug: "drum-cleaning",
     name: "Drum Cleaning",
     short: "Deep drum cleaning to remove detergent residue, mold & odor.",
-    image: "cleaning",
+    image: "drum_cleaning",
   },
   {
     slug: "pcb-repair",
-    name: "PCB Service",
+    name: "PCB Complaint",
     short: "Control board diagnosis, component-level soldering & service.",
     image: "pcb",
   },
   {
     slug: "motor-repair",
-    name: "Motor Service",
+    name: "Motor Complaint",
     short: "Motor rewinding, bearing & coupling replacement.",
-    image: "repair",
+    image: "motor",
   },
   {
     slug: "leakage-repair",
-    name: "Water Leakage Service",
+    name: "Water Leakage Issue",
     short: "Find & fix hose, gasket, valve & tub leaks the same day.",
-    image: "repair",
+    image: "leakage",
   },
   {
     slug: "door-lock-repair",
-    name: "Door Lock Service",
+    name: "Door Lock Issue",
     short: "Door lock, latch & interlock replacement for all brands.",
     image: "pcb",
   },
@@ -105,7 +105,7 @@ export const SERVICES = [
     slug: "spare-parts",
     name: "Spare Parts Replacement",
     short: "Genuine OEM spare parts for all major brands.",
-    image: "pcb",
+    image: "repair",
   },
 ] as const;
 

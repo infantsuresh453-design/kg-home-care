@@ -9,7 +9,7 @@ export function Logo({ className = "" }: { className?: string }) {
       <span className="flex flex-col leading-none">
         <span className="text-base font-bold tracking-tight text-foreground">KG Home Care</span>
         <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
-          Washing Machine Experts
+          Washing Machine Service Centre
         </span>
       </span>
     </Link>

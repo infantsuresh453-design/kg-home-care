@@ -56,7 +56,7 @@ export function SiteHeader() {
           {/* Logo */}
           <Link href="/" className="flex shrink-0 flex-col leading-none" aria-label="KG Home Care">
             <span className="text-[15px] font-extrabold tracking-tight text-foreground">KG Home Care</span>
-            <span className="text-[10px] font-medium tracking-wide text-muted-foreground">Washing Machine Experts</span>
+            <span className="text-[10px] font-medium tracking-wide text-muted-foreground">Washing Machine Service Centre</span>
           </Link>
 
           {/* Desktop nav */}
@@ -130,7 +130,7 @@ export function SiteHeader() {
         <div className="flex items-center justify-between border-b border-border/50 px-6 py-5">
           <div>
             <p className="text-base font-extrabold tracking-tight text-foreground">KG Home Care</p>
-            <p className="text-[11px] text-muted-foreground">Washing Machine Experts</p>
+            <p className="text-[11px] text-muted-foreground">Washing Machine Service Centre</p>
           </div>
           <button
             type="button"

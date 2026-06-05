@@ -87,6 +87,10 @@ export function HeroForm() {
           >
             <option value="" disabled className="text-slate-800">Choose a service</option>
             <option value="Washing Machine Service" className="text-slate-800">Washing Machine Service</option>
+            <option value="PCB Complaint" className="text-slate-800">PCB Complaint</option>
+            <option value="Motor Complaint" className="text-slate-800">Motor Complaint</option>
+            <option value="Water Leakage Issue" className="text-slate-800">Water Leakage Issue</option>
+            <option value="Door Lock Issue" className="text-slate-800">Door Lock Issue</option>
           </select>
         </div>
 
@@ -116,6 +120,10 @@ export function HeroForm() {
             "Book Now"
           )}
         </Button>
+
+        <p className="mt-3 text-center text-sm font-medium text-white/70">
+          Visiting &amp; Service Charges – ₹400
+        </p>
       </div>
     </form>
   );
