@@ -13,6 +13,12 @@ const IMG_MAP: Record<string, string> = {
   installation: "/service-installation.jpg",
   cleaning: "/service-cleaning.jpg",
   pcb: "/service-pcb.jpg",
+  washing_machine: "/service-washing-machine.png",
+  installation_new: "/service-installation-new.png",
+  drum_cleaning: "/service-drum-cleaning.png",
+  pcb_complaint: "/service-pcb-complaint.png",
+  motor: "/service-motor.png",
+  leakage: "/service-leakage.png",
 };
 
 const DETAIL: Record<string, { intro: string; includes: string[]; price: string }> = {
@@ -122,7 +128,8 @@ export default async function ServiceDetailPage({ params }: Props) {
       ],
       price: "Price shared after inspection",
     } as const);
-  const img = "image" in service ? IMG_MAP[service.image] : null;
+  const imageKey = "image" in service ? service.image : fallbackService?.image;
+  const img = imageKey ? IMG_MAP[imageKey] : null;
 
   return (
     <>
@@ -158,9 +165,6 @@ export default async function ServiceDetailPage({ params }: Props) {
               >
                 Book this service <ArrowRight className="h-4 w-4" />
               </a>
-              <Link href="/pricing" className="inline-flex h-12 items-center rounded-xl border border-border bg-background px-5 text-sm font-semibold text-foreground hover:bg-secondary">
-                View pricing
-              </Link>
             </div>
           </div>
           <div>

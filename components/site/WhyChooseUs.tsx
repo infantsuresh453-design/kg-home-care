@@ -34,7 +34,7 @@ export function WhyChooseUs() {
           loading="lazy"
           width={1024}
           height={1280}
-          className="aspect-[4/3] w-full rounded-2xl object-cover ring-2 ring-white/15 lg:aspect-[4/5]"
+          className="aspect-[4/3] w-full rounded-2xl object-cover object-top ring-2 ring-white/15 lg:aspect-[4/5]"
         />
         {/* stats bar */}
         <div className="absolute -bottom-2 left-2 right-2 grid grid-cols-4 divide-x divide-white/20 rounded-2xl border border-white/15 bg-white/10 backdrop-blur-md lg:-bottom-4">

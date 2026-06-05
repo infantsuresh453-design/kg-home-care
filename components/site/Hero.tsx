@@ -49,9 +49,7 @@ export function Hero() {
             </h1>
 
             <p className="mt-6 max-w-xl text-base leading-relaxed text-white/75 md:text-lg">
-              Professional doorstep washing machine service, installation, maintenance and
-              drum cleaning for all major brands — backed by genuine
-              spare parts and a written service warranty.
+              Professional Doorstep Washing Machine Service, Installation and Maintenance.
             </p>
 
             <ul className="mt-8 flex flex-wrap gap-x-3 gap-y-3">

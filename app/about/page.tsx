@@ -7,7 +7,7 @@ import { ScrollReveal } from "@/components/site/ScrollReveal";
 import { ServiceHeroForm } from "@/components/site/ServiceHeroForm";
 
 export const metadata: Metadata = {
-  title: "About KG Home Care — Washing Machine Experts in Tuticorin",
+  title: "About KG Home Care — Washing Machine Service Centre in Tuticorin",
   description:
     "Family-run washing machine service in Tuticorin since 2014. Certified technicians, genuine spare parts, and a written warranty on every service.",
   openGraph: {
@@ -87,7 +87,7 @@ export default function AboutPage() {
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-blue-400">About Us</p>
             <h1 className="mt-4 text-3xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-4xl md:text-5xl">
-              Tuticorin&apos;s trusted washing machine experts since 2014.
+              Tuticorin&apos;s trusted washing machine service centre since 2014.
             </h1>
             <p className="mt-5 max-w-lg text-base leading-relaxed text-slate-300">
               KG Home Care is a family-run service with one mission — do one thing, washing machine service, and do it better than anyone else. Over 10 years and 5,000+ services later, we&apos;re still going strong.

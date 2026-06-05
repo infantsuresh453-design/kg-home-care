@@ -9,6 +9,12 @@ const IMG_MAP: Record<string, string> = {
   installation: "/service-installation.jpg",
   cleaning:     "/service-cleaning.jpg",
   pcb:          "/service-pcb.jpg",
+  washing_machine: "/service-washing-machine.png",
+  installation_new: "/service-installation-new.png",
+  drum_cleaning: "/service-drum-cleaning.png",
+  pcb_complaint: "/service-pcb-complaint.png",
+  motor:        "/service-motor.png",
+  leakage:      "/service-leakage.png",
 };
 
 type GridItem = {
@@ -28,16 +34,19 @@ export function ServicesGrid({
 }) {
   const source =
     items?.length
-      ? items.map((item) => ({
-          slug: item.slug,
-          name: item.name,
-          short:
-            "description" in item
-              ? (item as ServiceRecord).description || "Professional washing machine service."
-              : (item as { short: string }).short,
-          image: "image" in item ? item.image : undefined,
-          image_url: "image_url" in item ? item.image_url : undefined,
-        }))
+      ? items.map((item) => {
+          const fallbackMatch = SERVICES.find(s => s.slug === item.slug);
+          return {
+            slug: item.slug,
+            name: item.name,
+            short:
+              "description" in item
+                ? (item as ServiceRecord).description || "Professional washing machine service."
+                : (item as { short: string }).short,
+            image: "image" in item ? item.image : fallbackMatch?.image,
+            image_url: "image_url" in item ? item.image_url : undefined,
+          };
+        })
       : SERVICES;
   const visibleItems = limit ? source.slice(0, limit) : source;
 
@@ -59,7 +68,7 @@ export function ServicesGrid({
               />
             ) : (
               <Image
-                src={IMG_MAP[(s as { image?: string }).image ?? "repair"]}
+                src={IMG_MAP[(s as { image?: string }).image ?? "repair"] ?? IMG_MAP["repair"]}
                 alt={s.name}
                 fill
                 loading="lazy"

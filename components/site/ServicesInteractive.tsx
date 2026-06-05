@@ -37,6 +37,12 @@ const IMG_MAP: Record<string, string> = {
   installation: "/service-installation.jpg",
   cleaning:     "/service-cleaning.jpg",
   pcb:          "/service-pcb.jpg",
+  washing_machine: "/service-washing-machine.png",
+  installation_new: "/service-installation-new.png",
+  drum_cleaning: "/service-drum-cleaning.png",
+  pcb_complaint: "/service-pcb-complaint.png",
+  motor:        "/service-motor.png",
+  leakage:      "/service-leakage.png",
 };
 
 /* ── types ────────────────────────────────────────────────── */
@@ -60,19 +66,23 @@ function normalize(
   limit?: number
 ): NormalizedItem[] {
   const source: NormalizedItem[] = items?.length
-    ? (items as GridItem[]).map((item) => ({
-        slug: item.slug,
-        name: item.name,
-        short:
-          "description" in item
-            ? ((item as unknown) as ServiceRecord).description ||
-              "Professional washing machine service."
-            : (item as { short: string }).short,
-        imgSrc:
-          item.image_url ||
-          IMG_MAP[(item.image as string) ?? "repair"] ||
-          IMG_MAP["repair"],
-      }))
+    ? (items as GridItem[]).map((item) => {
+        const fallbackMatch = SERVICES.find(s => s.slug === item.slug);
+        const imageKey = (item as any).image || fallbackMatch?.image || "repair";
+        return {
+          slug: item.slug,
+          name: item.name,
+          short:
+            "description" in item
+              ? ((item as unknown) as ServiceRecord).description ||
+                "Professional washing machine service."
+              : (item as { short: string }).short,
+          imgSrc:
+            item.image_url ||
+            IMG_MAP[imageKey] ||
+            IMG_MAP["repair"],
+        };
+      })
     : SERVICES.map((s) => ({
         slug: s.slug,
         name: s.name,
