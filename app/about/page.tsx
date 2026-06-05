@@ -9,7 +9,7 @@ import { ServiceHeroForm } from "@/components/site/ServiceHeroForm";
 export const metadata: Metadata = {
   title: "About KG Home Care — Washing Machine Experts in Tuticorin",
   description:
-    "Family-run washing machine service in Tuticorin since 2014. Certified technicians, genuine spare parts, and a written warranty on every repair.",
+    "Family-run washing machine service in Tuticorin since 2014. Certified technicians, genuine spare parts, and a written warranty on every service.",
   openGraph: {
     title: "About KG Home Care",
     description: "Family-run, focused only on washing machines — since 2014.",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 const STATS = [
   { value: "10+", label: "Years of Experience" },
-  { value: "5,000+", label: "Repairs Completed" },
+  { value: "5,000+", label: "Services Completed" },
   { value: "1,000+", label: "Happy Homes" },
 ];
 
@@ -28,12 +28,12 @@ const VALUES = [
   {
     icon: ShieldCheck,
     title: "Written Warranty",
-    description: "Every repair comes with a written service warranty so you have complete peace of mind.",
+    description: "Every service comes with a written service warranty so you have complete peace of mind.",
   },
   {
     icon: Wrench,
     title: "Genuine Spare Parts",
-    description: "We use only OEM-grade spare parts from authorised distributors for lasting repairs.",
+    description: "We use only OEM-grade spare parts from authorised distributors for lasting service.",
   },
   {
     icon: Clock,
@@ -90,7 +90,7 @@ export default function AboutPage() {
               Tuticorin&apos;s trusted washing machine experts since 2014.
             </h1>
             <p className="mt-5 max-w-lg text-base leading-relaxed text-slate-300">
-              KG Home Care is a family-run service with one mission — do one thing, washing machine service, and do it better than anyone else. Over 10 years and 5,000+ repairs later, we&apos;re still going strong.
+              KG Home Care is a family-run service with one mission — do one thing, washing machine service, and do it better than anyone else. Over 10 years and 5,000+ services later, we&apos;re still going strong.
             </p>
 
             {/* Stats inline */}
@@ -133,10 +133,10 @@ export default function AboutPage() {
                 </h2>
                 <div className="mt-6 space-y-4 text-base leading-relaxed text-slate-600">
                   <p>
-                    What started as a small repair shop in 2014 has grown into Tuticorin&apos;s most trusted washing machine service provider. We made a conscious decision early on — instead of being a general appliance repair shop, we would specialise entirely in washing machines.
+                    What started as a small service centre in 2014 has grown into Tuticorin&apos;s most trusted washing machine service provider. We made a conscious decision early on — instead of being a general appliance service shop, we would specialise entirely in washing machines.
                   </p>
                   <p>
-                    That focus means our technicians know every model, every brand, and every common fault inside out. From a simple drum clean to complex PCB repairs, we handle it all with the same care and expertise.
+                    That focus means our technicians know every model, every brand, and every common fault inside out. From a simple drum clean to complex PCB services, we handle it all with the same care and expertise.
                   </p>
                   <p>
                     Today, we serve over 1,000 homes across Tuticorin and surrounding areas, with same-day doorstep service and a written warranty on every job.

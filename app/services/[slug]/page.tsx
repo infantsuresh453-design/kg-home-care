@@ -19,7 +19,7 @@ const DETAIL: Record<string, { intro: string; includes: string[]; price: string 
   "washing-machine-repair": {
     intro:
       "Our certified technicians diagnose and fix every washing machine fault — front-load or top-load, fully or semi-automatic.",
-    includes: ["Full diagnostic check", "Component-level repair", "Genuine spare parts", "Test wash & sign-off", "60-day service warranty"],
+    includes: ["Full diagnostic check", "Component-level service", "Genuine spare parts", "Test wash & sign-off", "60-day service warranty"],
     price: "₹299 inspection · final cost after diagnosis",
   },
   installation: {
@@ -34,34 +34,28 @@ const DETAIL: Record<string, { intro: string; includes: string[]; price: string 
     includes: ["Eco-safe drum solution", "Hot rinse cycle", "Odor removal", "Visible residue removal"],
     price: "Starts at ₹599",
   },
-  "deep-cleaning": {
-    intro:
-      "Full machine deep clean covering drum, door gasket, detergent dispenser and lint filter — leaves your machine like new.",
-    includes: ["Drum + gasket + filter", "Dispenser cleaning", "Outer panel polish", "Odor & residue removal"],
-    price: "Starts at ₹999",
-  },
   "pcb-repair": {
     intro:
       "Control board (PCB) faults are the #1 cause of unresponsive machines. We do component-level diagnosis and soldering.",
-    includes: ["Multi-meter diagnosis", "Component-level repair", "Genuine replacement when needed", "Software/program reset"],
+    includes: ["Multi-meter diagnosis", "Component-level service", "Genuine replacement when needed", "Software/program reset"],
     price: "Starts at ₹899",
   },
   "motor-repair": {
     intro:
-      "Motor faults — humming, no spin, knocking — are diagnosed and repaired in-home, including motor rewinding when needed.",
+      "Motor faults — humming, no spin, knocking — are diagnosed and serviced in-home, including motor rewinding when needed.",
     includes: ["Motor rewinding", "Bearing & capacitor replacement", "Drive belt & coupling", "Vibration balance check"],
     price: "Starts at ₹799",
   },
   "leakage-repair": {
     intro:
       "Water leakage is usually a hose, gasket, tub seal or valve issue. We trace it precisely and fix it the same day.",
-    includes: ["Leak source diagnosis", "Hose & valve replacement", "Door gasket replacement", "Tub seal repair"],
+    includes: ["Leak source diagnosis", "Hose & valve replacement", "Door gasket replacement", "Tub seal service"],
     price: "Starts at ₹499",
   },
   "door-lock-repair": {
     intro:
       "Door lock and interlock failures lock you out mid-cycle. We replace the lock and reset the cycle safely.",
-    includes: ["Door lock replacement", "Interlock switch repair", "Door hinge alignment", "Safety check"],
+    includes: ["Door lock replacement", "Interlock switch service", "Door hinge alignment", "Safety check"],
     price: "Starts at ₹599",
   },
   amc: {
@@ -214,7 +208,7 @@ export default async function ServiceDetailPage({ params }: Props) {
         <div className="mt-10 grid gap-4 rounded-3xl bg-secondary p-6 md:grid-cols-3">
           <div className="flex items-center gap-3">
             <ShieldCheck className="h-6 w-6 text-primary" />
-            <div><div className="font-semibold">Warranty</div><div className="text-sm text-muted-foreground">On every repair</div></div>
+            <div><div className="font-semibold">Warranty</div><div className="text-sm text-muted-foreground">On every service</div></div>
           </div>
           <div className="flex items-center gap-3">
             <Clock className="h-6 w-6 text-primary" />

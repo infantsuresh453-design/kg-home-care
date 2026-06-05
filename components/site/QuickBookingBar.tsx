@@ -16,7 +16,7 @@ import { ArrowRight, Loader2, Sparkles } from "lucide-react";
 const ISSUES = [
   "Not Starting", "Water Leakage", "No Spin", "Excessive Noise",
   "Door Lock Issue", "Drum Not Rotating", "PCB Failure", "Motor Problem",
-  "Installation", "Deep Cleaning",
+  "Installation",
 ];
 
 export function QuickBookingBar() {
@@ -44,6 +44,7 @@ export function QuickBookingBar() {
       {/* Hidden inputs for select values */}
       <input type="hidden" name="brand" value={brand ?? ""} />
       <input type="hidden" name="message" value={issue ?? ""} />
+      <input type="hidden" name="service" value="Washing Machine Service" />
 
       <div className="grid gap-2 md:grid-cols-[1.2fr_1fr_1fr_1.2fr_auto] md:gap-3">
         <Input

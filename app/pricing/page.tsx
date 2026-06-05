@@ -7,10 +7,10 @@ import { ContactCTA } from "@/components/site/ContactCTA";
 export const metadata: Metadata = {
   title: "Pricing — Washing Machine Service Cost in Tuticorin",
   description:
-    "Transparent washing machine service pricing in Tuticorin. Inspection ₹299, Installation ₹499, Deep Cleaning ₹999, AMC ₹2499. No hidden charges.",
+    "Transparent washing machine service pricing in Tuticorin. Inspection ₹299, Installation ₹499, Drum Cleaning ₹599, AMC ₹2499. No hidden charges.",
   openGraph: {
     title: "Washing Machine Service Pricing — KG Home Care",
-    description: "Upfront pricing for inspection, installation, deep cleaning and AMC service in Tuticorin.",
+    description: "Upfront pricing for inspection, installation, drum cleaning and AMC service in Tuticorin.",
     url: "/pricing",
   },
   alternates: { canonical: "/pricing" },

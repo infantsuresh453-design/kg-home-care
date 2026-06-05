@@ -4,15 +4,11 @@ import { bookingMessage, waHref } from "@/lib/contact";
 const TIERS = [
   {
     name: "Inspection", price: "299", popular: false, service: "Inspection visit",
-    features: ["Doorstep visit", "Full diagnosis", "Repair estimate", "Adjustable against repair cost"],
+    features: ["Doorstep visit", "Full diagnosis", "Service estimate", "Adjustable against service cost"],
   },
   {
     name: "Installation", price: "499", popular: false, service: "Installation",
     features: ["Front-load or top-load", "Hose & leveling setup", "Test cycle included", "Same day available"],
-  },
-  {
-    name: "Deep Cleaning", price: "999", popular: true, service: "Deep Cleaning",
-    features: ["Drum + gasket + filter", "Dispenser cleaning", "Odor removal", "Eco-safe solution"],
   },
   {
     name: "AMC Package", price: "2,499", popular: false, service: "AMC Service",
@@ -66,7 +62,7 @@ export function PricingCards() {
         ))}
       </div>
       <p className="mt-6 rounded-2xl bg-secondary px-5 py-4 text-center text-sm text-foreground/75">
-        Final repair cost depends on issue diagnosis and spare parts requirements.
+        Final service cost depends on issue diagnosis and spare parts requirements.
         All prices include GST.
       </p>
     </>

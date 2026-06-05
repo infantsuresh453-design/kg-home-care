@@ -3,7 +3,7 @@
 
 export const BUSINESS = {
   name: "KG Home Care",
-  tagline: "Washing Machine Repair Experts in Tuticorin",
+  tagline: "Washing Machine Service Centre in Tuticorin",
   address: {
     line1: "7/1, Kovil Street",
     line2: "Pudukkottai - 628103",
@@ -55,8 +55,8 @@ export const BRANDS = [] as const;
 export const SERVICES = [
   {
     slug: "washing-machine-repair",
-    name: "Washing Machine Repair",
-    short: "Expert repair for all front-load & top-load washing machines.",
+    name: "Washing Machine Service",
+    short: "Expert service for all front-load & top-load washing machines.",
     image: "repair",
   },
   {
@@ -72,32 +72,26 @@ export const SERVICES = [
     image: "cleaning",
   },
   {
-    slug: "deep-cleaning",
-    name: "Deep Cleaning",
-    short: "Full machine deep clean — drum, gasket, filter & dispenser.",
-    image: "cleaning",
-  },
-  {
     slug: "pcb-repair",
-    name: "PCB Repair",
-    short: "Control board diagnosis, component-level soldering & repair.",
+    name: "PCB Service",
+    short: "Control board diagnosis, component-level soldering & service.",
     image: "pcb",
   },
   {
     slug: "motor-repair",
-    name: "Motor Repair",
+    name: "Motor Service",
     short: "Motor rewinding, bearing & coupling replacement.",
     image: "repair",
   },
   {
     slug: "leakage-repair",
-    name: "Water Leakage Repair",
+    name: "Water Leakage Service",
     short: "Find & fix hose, gasket, valve & tub leaks the same day.",
     image: "repair",
   },
   {
     slug: "door-lock-repair",
-    name: "Door Lock Repair",
+    name: "Door Lock Service",
     short: "Door lock, latch & interlock replacement for all brands.",
     image: "pcb",
   },

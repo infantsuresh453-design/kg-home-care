@@ -8,9 +8,9 @@ const FEATURES = [
   { icon: BadgeCheck,   label: "Certified Technicians",  desc: "Trained, background-verified experts."   },
   { icon: PackageCheck, label: "Genuine Spare Parts",    desc: "Only OEM-approved parts used."            },
   { icon: Wrench,       label: "Doorstep Service",       desc: "We come to you — no transport hassle."   },
-  { icon: Clock,        label: "Same Day Support",       desc: "Most repairs done within hours."          },
+  { icon: Clock,        label: "Same Day Support",       desc: "Most services done within hours."          },
   { icon: IndianRupee,  label: "Affordable Pricing",     desc: "Transparent rates, no hidden fees."       },
-  { icon: ShieldCheck,  label: "Service Warranty",       desc: "90-day warranty on every repair."         },
+  { icon: ShieldCheck,  label: "Service Warranty",       desc: "90-day warranty on every service."         },
   { icon: Receipt,      label: "Transparent Charges",    desc: "Quote before any work begins."            },
   { icon: Zap,          label: "Quick Response",         desc: "Technician dispatched in 15 minutes."     },
 ];

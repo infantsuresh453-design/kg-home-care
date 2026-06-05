@@ -53,7 +53,7 @@ export function ContactCTA() {
           </span>
 
           <h2 className="mt-5 text-3xl font-extrabold leading-[1.1] tracking-tight text-white md:text-4xl lg:text-[2.6rem]">
-            Need urgent washing<br className="hidden sm:block" /> machine repair?
+            Need urgent washing<br className="hidden sm:block" /> machine service?
           </h2>
           <p className="mt-4 max-w-lg text-base text-white/60">
             Book in 60 seconds. Technician arrives today. Pay only after the job is done.

@@ -140,13 +140,13 @@ export function SeoPageForm({ action, initialData, submitLabel }: SeoPageFormPro
           {/* Section 1: Hero */}
           <FormSection icon={Megaphone} title="Hero Section" badge="Section 1">
             <div className="grid gap-5">
-              <FormField label="H1 Heading" id="heading" hint="Include location keyword (e.g. 'Washing Machine Repair in Anna Nagar')">
+              <FormField label="H1 Heading" id="heading" hint="Include location keyword (e.g. 'Washing Machine Service in Anna Nagar')">
                 <input
                   id="heading"
                   name="heading"
                   className={inputClass}
                   defaultValue={initialData?.heading ?? ""}
-                  placeholder="Washing Machine Repair in [Location]"
+                  placeholder="Washing Machine Service in [Location]"
                   onChange={(event) => {
                     if (!manualSlug && !slug) {
                       setSlug(slugify(event.target.value));
@@ -222,7 +222,7 @@ export function SeoPageForm({ action, initialData, submitLabel }: SeoPageFormPro
           <FormSection icon={MessageSquare} title="FAQ Section (Schema-Ready)" badge="Section 9">
             <div className="space-y-1.5">
               <p className="text-[11px] text-slate-500">
-                Target &ldquo;how much does repair cost in [City]&rdquo; type queries. Each Q&A gets structured FAQ schema markup.
+                Target &ldquo;how much does service cost in [City]&rdquo; type queries. Each Q&A gets structured FAQ schema markup.
               </p>
               <textarea
                 id="faq_text"
@@ -230,7 +230,7 @@ export function SeoPageForm({ action, initialData, submitLabel }: SeoPageFormPro
                 className={textareaClass}
                 defaultValue={faqText}
                 rows={10}
-                placeholder={`Q: How much does washing machine repair cost in Anna Nagar?\nA: Basic inspection starts at ₹299. Final cost depends on the issue — we share the estimate before starting.\n\nQ: Do you provide same day service?\nA: Yes, book before 4 PM and our technician will visit the same day.\n\nQ: Which brands do you service?\nA: We service all brands including Samsung, LG, Whirlpool, Bosch, IFB, and Haier.`}
+                placeholder={`Q: How much does washing machine service cost in Anna Nagar?\nA: Basic inspection starts at ₹299. Final cost depends on the issue — we share the estimate before starting.\n\nQ: Do you provide same day service?\nA: Yes, book before 4 PM and our technician will visit the same day.\n\nQ: Which brands do you service?\nA: We service all brands including Samsung, LG, Whirlpool, Bosch, IFB, and Haier.`}
               />
             </div>
           </FormSection>
@@ -244,7 +244,7 @@ export function SeoPageForm({ action, initialData, submitLabel }: SeoPageFormPro
                   name="meta_title"
                   className={inputClass}
                   defaultValue={initialData?.meta_title ?? ""}
-                  placeholder="Washing Machine Repair in Anna Nagar | Same Day Service"
+                  placeholder="Washing Machine Service in Anna Nagar | Same Day Service"
                 />
               </FormField>
               <FormField label="Meta description" id="meta_description" hint="150-160 chars. Include location, service, and USP.">
@@ -254,7 +254,7 @@ export function SeoPageForm({ action, initialData, submitLabel }: SeoPageFormPro
                   className={textareaClass}
                   defaultValue={initialData?.meta_description ?? ""}
                   rows={3}
-                  placeholder="Expert washing machine repair in Anna Nagar. Same day doorstep service, genuine parts, 90-day warranty. Call now."
+                  placeholder="Expert washing machine service in Anna Nagar. Same day doorstep service, genuine parts, 90-day warranty. Call now."
                 />
               </FormField>
               <div className="grid gap-5 md:grid-cols-2">
@@ -264,7 +264,7 @@ export function SeoPageForm({ action, initialData, submitLabel }: SeoPageFormPro
                     name="keywords"
                     className={inputClass}
                     defaultValue={initialData?.keywords ?? ""}
-                    placeholder="washing machine repair anna nagar, washing machine service near me"
+                    placeholder="washing machine service anna nagar, washing machine service near me"
                   />
                 </FormField>
                 <FormField label="Other head tags" id="other_tags">

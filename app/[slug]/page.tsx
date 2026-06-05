@@ -59,10 +59,10 @@ const TRUST_ITEMS = [
 
 const COMMON_SERVICES = [
   { title: "Not Spinning / Vibrating", desc: "Drum, bearing, belt & motor issues diagnosed and fixed." },
-  { title: "Water Not Draining", desc: "Pump, hose blockage & drain valve repair." },
+  { title: "Water Not Draining", desc: "Pump, hose blockage & drain valve service." },
   { title: "Leaking Water", desc: "Gasket, inlet valve & tub seal replacement." },
   { title: "PCB / Error Codes", desc: "Component-level board diagnosis & soldering." },
-  { title: "Noisy Operation", desc: "Bearing, shock absorber & suspension repair." },
+  { title: "Noisy Operation", desc: "Bearing, shock absorber & suspension service." },
   { title: "Not Starting / Dead", desc: "Power supply, door lock & wiring faults." },
 ];
 
@@ -76,7 +76,7 @@ const WHY_CHOOSE = [
 const STEPS = [
   { step: "1", title: "Book a Visit", desc: "Call, WhatsApp, or fill the form — takes 30 seconds." },
   { step: "2", title: "Technician Arrives", desc: "Certified technician reaches your doorstep same day." },
-  { step: "3", title: "Problem Solved", desc: "Transparent diagnosis, upfront quote, and quality repair." },
+  { step: "3", title: "Problem Solved", desc: "Transparent diagnosis, upfront quote, and quality service." },
 ];
 
 export default async function SeoPage({ params }: SeoPageProps) {
@@ -232,7 +232,7 @@ export default async function SeoPage({ params }: SeoPageProps) {
         <Section
           eyebrow="Our Services"
           title={`Washing Machine Problems We Fix in ${location}`}
-          description="From simple fixes to complex board-level repairs — our certified technicians handle it all at your doorstep."
+          description="From simple fixes to complex board-level services — our certified technicians handle it all at your doorstep."
           className="relative"
         >
           <ScrollReveal>

@@ -6,7 +6,7 @@ const POINTS = [
   { icon: ShieldCheck, label: "Warranty Support",    desc: "Written warranty on every job." },
   { icon: BadgeCheck,  label: "Genuine Spare Parts", desc: "OEM parts only, no substitutes."  },
   { icon: Wrench,      label: "Expert Service",      desc: "Certified, trained technicians."  },
-  { icon: Stars,       label: "Trusted Repairs",     desc: "5,000+ satisfied customers."      },
+  { icon: Stars,       label: "Trusted Services",    desc: "5,000+ satisfied customers."      },
 ];
 
 export function WarrantyBanner() {
@@ -47,10 +47,10 @@ export function WarrantyBanner() {
             Service Warranty
           </span>
           <h2 className="mt-4 text-3xl font-extrabold leading-[1.15] tracking-tight text-white md:text-4xl">
-            Every Repair Backed<br className="hidden sm:block" /> By Written Warranty.
+            Every Service Backed<br className="hidden sm:block" /> By Written Warranty.
           </h2>
           <p className="mt-4 max-w-md text-sm leading-relaxed text-white/55">
-            Pay only when you&apos;re 100% satisfied. We stand behind every repair with genuine spare parts and certified technician workmanship.
+            Pay only when you&apos;re 100% satisfied. We stand behind every service with genuine spare parts and certified technician workmanship.
           </p>
 
           <a

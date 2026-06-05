@@ -4,11 +4,11 @@ import { AppShell } from "@/components/site/AppShell";
 
 export const metadata: Metadata = {
   title: {
-    default: "KG Home Care — Washing Machine Repair in Tuticorin",
+    default: "KG Home Care — Washing Machine Service Centre in Tuticorin",
     template: "%s | KG Home Care",
   },
   description:
-    "KG Home Care: trusted washing machine repair, installation, deep cleaning and AMC service in Tuticorin.",
+    "KG Home Care: trusted washing machine service, installation, drum cleaning and AMC in Tuticorin.",
   authors: [{ name: "KG Home Care" }],
   openGraph: {
     siteName: "KG Home Care",
@@ -28,7 +28,7 @@ const localBusinessSchema = {
   "@type": "LocalBusiness",
   name: "KG Home Care",
   description:
-    "Washing machine repair, installation, deep cleaning and AMC service in Tuticorin.",
+    "Washing machine service, installation, drum cleaning and AMC in Tuticorin.",
   telephone: "+91 99999 99999",
   address: {
     "@type": "PostalAddress",

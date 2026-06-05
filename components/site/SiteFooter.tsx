@@ -12,7 +12,7 @@ export function SiteFooter() {
         <div>
           <span className="text-base font-extrabold tracking-tight text-white">KG Home Care</span>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-white/50">
-            Tuticorin&apos;s trusted washing machine repair, installation and maintenance — certified technicians, genuine parts.
+            Tuticorin&apos;s trusted washing machine service, installation and maintenance — certified technicians, genuine parts.
           </p>
           <div className="mt-5 space-y-2.5">
             <a href={telHref()} className="flex items-center gap-2.5 text-sm text-white/60 transition-colors hover:text-white">

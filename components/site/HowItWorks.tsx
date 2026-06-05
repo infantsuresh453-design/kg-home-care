@@ -4,7 +4,7 @@ const STEPS = [
   { icon: MessageCircle, action: "Book",       desc: "WhatsApp or call in 2 min",       time: "2 minutes",       num: 1 },
   { icon: Phone,         action: "Confirm",    desc: "We call back to confirm your slot", time: "We call back",   num: 2 },
   { icon: Home,          action: "We Arrive",  desc: "Certified technician at your door", time: "Same day",       num: 3 },
-  { icon: ShieldCheck,   action: "Fixed",      desc: "Repair done with genuine parts",    time: "90-day warranty", num: 4 },
+  { icon: ShieldCheck,   action: "Fixed",      desc: "Service done with genuine parts",    time: "90-day warranty", num: 4 },
 ];
 
 export function HowItWorks() {

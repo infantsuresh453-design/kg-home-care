@@ -28,7 +28,7 @@ const REVIEWS = [
     area: "Tuticorin",
     date: "Apr 2025",
     rating: 5,
-    text: "Excellent deep cleaning. The technician explained everything, removed all the bad smell and even cleaned the gasket. Worth every rupee.",
+    text: "Excellent drum cleaning. The technician explained everything, removed all the bad smell and even cleaned the gasket. Worth every rupee.",
     color: "bg-emerald-600",
   },
   {
@@ -37,7 +37,7 @@ const REVIEWS = [
     area: "Ettayapuram",
     date: "Mar 2025",
     rating: 5,
-    text: "Same-day repair, genuine spare part, 90-day warranty. KG Home Care is now our go-to service for anything washing machine.",
+    text: "Same-day service, genuine spare part, 90-day warranty. KG Home Care is now our go-to for anything washing machine.",
     color: "bg-rose-600",
   },
   {

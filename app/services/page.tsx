@@ -11,11 +11,11 @@ import { ServiceHeroForm } from "@/components/site/ServiceHeroForm";
 export const metadata: Metadata = {
   title: "Washing Machine Services in Tuticorin — KG Home Care",
   description:
-    "Expert front-load and top-load washing machine repair, installation, deep cleaning, and maintenance services in Tuticorin.",
+    "Expert front-load and top-load washing machine service, installation, drum cleaning, and maintenance in Tuticorin.",
   openGraph: {
     title: "Washing Machine Services in Tuticorin",
     description:
-      "Front-load & top-load washing machine repair, installation, cleaning & AMC in Tuticorin.",
+      "Front-load & top-load washing machine service, installation, cleaning & AMC in Tuticorin.",
     url: "/services",
   },
   alternates: { canonical: "/services" },
@@ -33,8 +33,8 @@ const FRONT_LOAD_POINTS = [
   "Drum not spinning or vibration issues",
   "Door seal & gasket replacement",
   "Water leakage from front panel",
-  "PCB & control board repair",
-  "Deep cleaning — drum, gasket, filter & dispenser",
+  "PCB & control board service",
+  "Drum cleaning — drum, gasket, filter & dispenser",
   "Installation & uninstallation",
   "Motor rewinding & bearing replacement",
   "Error code diagnosis & reset",
@@ -43,7 +43,7 @@ const FRONT_LOAD_POINTS = [
 const TOP_LOAD_POINTS = [
   "Not draining or draining slowly",
   "Agitator & pulsator issues",
-  "Timer & program selector repair",
+  "Timer & program selector service",
   "Motor, belt & capacitor replacement",
   "Full tub cleaning & sanitization",
   "Installation & uninstallation",
@@ -138,7 +138,7 @@ export default function ServicesPage() {
               <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-lift">
                 <Image
                   src="/service-repair.jpg"
-                  alt="Front-load washing machine repair service"
+                  alt="Front-load washing machine service"
                   fill
                   className="object-cover"
                 />
@@ -167,7 +167,7 @@ export default function ServicesPage() {
               <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-lift order-2 lg:order-1">
                 <Image
                   src="/service-installation.jpg"
-                  alt="Top-load washing machine repair service"
+                  alt="Top-load washing machine service"
                   fill
                   className="object-cover"
                 />

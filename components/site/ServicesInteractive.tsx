@@ -13,7 +13,6 @@ import {
   Lock,
   CalendarCheck,
   Box,
-  WashingMachine,
   ArrowUpRight,
 } from "lucide-react";
 import { SERVICES, bookingMessage, waHref } from "@/lib/contact";
@@ -24,7 +23,6 @@ const ICON_MAP: Record<string, React.ElementType> = {
   "washing-machine-repair": Wrench,
   installation:             Package,
   "drum-cleaning":          Sparkles,
-  "deep-cleaning":          WashingMachine,
   "pcb-repair":             CircuitBoard,
   "motor-repair":           Cog,
   "leakage-repair":         Droplets,

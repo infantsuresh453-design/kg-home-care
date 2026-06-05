@@ -43,14 +43,14 @@ export function Hero() {
             <h1 className="mt-6 text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
               Washing Machine <br className="hidden sm:block" />
               <span className="bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent drop-shadow-sm">
-                Repair Experts
+                Service Centre
               </span>{" "}
               in Tuticorin
             </h1>
 
             <p className="mt-6 max-w-xl text-base leading-relaxed text-white/75 md:text-lg">
-              Professional doorstep washing machine repair, installation, maintenance and
-              deep cleaning for all major brands — backed by genuine
+              Professional doorstep washing machine service, installation, maintenance and
+              drum cleaning for all major brands — backed by genuine
               spare parts and a written service warranty.
             </p>
 

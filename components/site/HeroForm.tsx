@@ -75,6 +75,22 @@ export function HeroForm() {
         </div>
 
         <div className="space-y-1.5">
+          <Label htmlFor="hero-service" className="text-sm text-white/80">
+            Select a Service
+          </Label>
+          <select
+            id="hero-service"
+            name="service"
+            required
+            defaultValue=""
+            className="h-11 w-full rounded-xl border border-white/20 bg-white/10 px-4 text-sm text-white outline-none transition-all focus:ring-2 focus:ring-primary"
+          >
+            <option value="" disabled className="text-slate-800">Choose a service</option>
+            <option value="Washing Machine Service" className="text-slate-800">Washing Machine Service</option>
+          </select>
+        </div>
+
+        <div className="space-y-1.5">
           <Label htmlFor="hero-issue" className="text-sm text-white/80">
             Issue
           </Label>

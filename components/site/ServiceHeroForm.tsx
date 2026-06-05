@@ -61,6 +61,16 @@ export function ServiceHeroForm() {
           className="h-12 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm text-slate-800 placeholder:text-slate-400 outline-none transition-all focus:border-primary/50 focus:bg-white focus:ring-2 focus:ring-primary/10"
         />
 
+        <select
+          name="service"
+          required
+          defaultValue=""
+          className="h-12 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm text-slate-800 outline-none transition-all focus:border-primary/50 focus:bg-white focus:ring-2 focus:ring-primary/10"
+        >
+          <option value="" disabled>Select a Service</option>
+          <option value="Washing Machine Service">Washing Machine Service</option>
+        </select>
+
         <textarea
           placeholder="Describe your issue (e.g. not spinning, water leaking...)"
           name="message"
