@@ -20,14 +20,14 @@ export function HomeContact() {
       <div className="flex flex-col overflow-hidden rounded-2xl border border-border shadow-soft">
         <iframe
           title="KG Home Care location"
-          src="https://www.google.com/maps?q=7%2F1+Kovil+Street+Pudukkottai+Tuticorin+Tamil+Nadu&output=embed"
+          src="https://www.google.com/maps?q=5A%2F394+Caldwell+Colony+3rd+Street+Tuticorin+Tamil+Nadu&output=embed"
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
           className="min-h-[280px] w-full flex-1 border-0"
           allowFullScreen
         />
         <a
-          href="https://maps.google.com/?q=7/1+Kovil+Street+Pudukkottai+Tuticorin+Tamil+Nadu"
+          href="https://maps.google.com/?q=5A/394+Caldwell+Colony+3rd+Street+Tuticorin+Tamil+Nadu"
           target="_blank"
           rel="noreferrer"
           className="flex shrink-0 items-center justify-center bg-white py-3 text-sm font-semibold text-primary transition-colors hover:bg-slate-50"

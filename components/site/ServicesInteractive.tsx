@@ -11,7 +11,6 @@ import {
   Cog,
   Droplets,
   Lock,
-  CalendarCheck,
   Box,
   ArrowUpRight,
 } from "lucide-react";
@@ -27,7 +26,6 @@ const ICON_MAP: Record<string, React.ElementType> = {
   "motor-repair":           Cog,
   "leakage-repair":         Droplets,
   "door-lock-repair":       Lock,
-  amc:                      CalendarCheck,
   "spare-parts":            Box,
 };
 

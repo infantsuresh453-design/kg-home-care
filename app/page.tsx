@@ -13,7 +13,7 @@ import { ScrollReveal } from "@/components/site/ScrollReveal";
 import { getPublicServices } from "@/lib/cms";
 
 export const metadata: Metadata = {
-  title: "KG Home Care — Washing Machine Service, Installation & AMC in Tuticorin",
+  title: "KG Home Care — Washing Machine Service & Installation in Tuticorin",
   description:
     "Doorstep washing machine service, installation, drum cleaning, PCB & motor service in Tuticorin. Same day service.",
   openGraph: {

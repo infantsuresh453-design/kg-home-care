@@ -92,6 +92,7 @@ export function ContactCTA() {
         <div className="rounded-2xl border border-white/10 bg-white/8 p-7 backdrop-blur-md">
           <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-blue-400">Visit Us</p>
           <h3 className="mt-3 text-lg font-bold text-white">{BUSINESS.name}</h3>
+          <p className="text-sm text-white/60">Washing Machine Service Centre</p>
 
           <div className="mt-4 space-y-3">
             <div className="flex items-start gap-3 text-sm text-white/70">

@@ -5,10 +5,10 @@ import { AppShell } from "@/components/site/AppShell";
 export const metadata: Metadata = {
   title: {
     default: "KG Home Care — Washing Machine Service Centre in Tuticorin",
-    template: "%s | KG Home Care",
+    template: "%s | KG Home Care — Washing Machine Service Centre",
   },
   description:
-    "KG Home Care: trusted washing machine service, installation, drum cleaning and AMC in Tuticorin.",
+    "KG Home Care: trusted washing machine service, installation and drum cleaning in Tuticorin.",
   authors: [{ name: "KG Home Care" }],
   openGraph: {
     siteName: "KG Home Care",
@@ -28,17 +28,17 @@ const localBusinessSchema = {
   "@type": "LocalBusiness",
   name: "KG Home Care",
   description:
-    "Washing machine service, installation, drum cleaning and AMC in Tuticorin.",
+    "Washing machine service, installation and drum cleaning in Tuticorin.",
   telephone: "+91 99999 99999",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "7/1, Kovil Street",
-    addressLocality: "Pudukkottai",
+    streetAddress: "5A/394, Caldwell Colony 3rd Street",
+    addressLocality: "Tuticorin",
     addressRegion: "Tamil Nadu",
-    postalCode: "628103",
+    postalCode: "628008",
     addressCountry: "IN",
   },
-  areaServed: ["Tuticorin", "Pudukkottai", "Tamil Nadu"],
+  areaServed: ["Tuticorin", "Kovilpatti", "Tiruchendur", "Tamil Nadu"],
   openingHours: "Mo-Su 08:00-21:00",
   priceRange: "₹₹",
 };

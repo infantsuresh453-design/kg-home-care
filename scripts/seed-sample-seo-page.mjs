@@ -32,7 +32,7 @@ const samplePage = {
     { name: "Priya Sundaram", trip: "Anna Nagar West, Chennai", rating: 5, review: "LG machine wasn't spinning. Diagnosed quickly — worn belt. Replaced on the spot with genuine part. Works perfectly." },
     { name: "Mohammed Irfan", trip: "Thirumangalam, Chennai", rating: 5, review: "Deep cleaning for my 3-year-old Whirlpool. The amount of gunk cleaned out was shocking. Machine runs like new." },
     { name: "Lakshmi Narayanan", trip: "Mogappair, Chennai", rating: 5, review: "PCB issue in my IFB machine. Others quoted ₹4000+ for replacement. These guys repaired the board for ₹1200. Honest pricing." },
-    { name: "Deepa Rajendran", trip: "Anna Nagar, Chennai", rating: 5, review: "AMC service — two visits done, thorough cleaning and checkup both times. Machine running smoothly. Worth every rupee." },
+    { name: "Deepa Rajendran", trip: "Anna Nagar, Chennai", rating: 5, review: "Installation of new Samsung front-load. Leveled perfectly, connected all hoses, did a test wash. Very neat work." },
     { name: "Karthik S", trip: "Aminjikarai, Chennai", rating: 5, review: "Installation of new Bosch front-load. Leveled perfectly, connected all hoses, did a test wash. Very neat work." }
   ],
   other_tags: null

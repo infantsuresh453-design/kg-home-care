@@ -4,9 +4,9 @@ import { BUSINESS, PHONE_DISPLAY, telHref } from "@/lib/contact";
 import { LeadCaptureForm } from "@/components/site/LeadCaptureForm";
 
 export const metadata: Metadata = {
-  title: "Contact KG Home Care — Book Washing Machine Service in Tuticorin",
+  title: "Contact KG Home Care — Washing Machine Service Centre in Tuticorin",
   description:
-    "Call or book a doorstep washing machine service visit. KG Home Care, 7/1 Kovil Street, Pudukkottai, Tuticorin.",
+    "Call or book a doorstep washing machine service visit. KG Home Care, 5A/394, Caldwell Colony 3rd Street, Tuticorin – 628008.",
   openGraph: {
     title: "Contact KG Home Care",
     description: "Book a doorstep washing machine service in Tuticorin.",
@@ -66,7 +66,7 @@ export default function ContactPage() {
               label: "Location",
               value: BUSINESS.address.city,
               sub: `${BUSINESS.address.line1}, ${BUSINESS.address.line2}`,
-              href: "https://maps.google.com/?q=7/1+Kovil+Street+Pudukkottai+Tuticorin+Tamil+Nadu",
+              href: "https://maps.google.com/?q=5A/394+Caldwell+Colony+3rd+Street+Tuticorin+Tamil+Nadu",
               color: "bg-emerald-50 text-emerald-600",
             },
             {
@@ -131,14 +131,14 @@ export default function ContactPage() {
             <div className="overflow-hidden rounded-3xl border border-slate-200 shadow-soft">
               <iframe
                 title="KG Home Care location"
-                src="https://www.google.com/maps?q=7%2F1+Kovil+Street+Pudukkottai+Tuticorin+Tamil+Nadu&output=embed"
+                src="https://www.google.com/maps?q=5A%2F394+Caldwell+Colony+3rd+Street+Tuticorin+Tamil+Nadu&output=embed"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="h-72 w-full border-0"
                 allowFullScreen
               />
               <a
-                href="https://maps.google.com/?q=7/1+Kovil+Street+Pudukkottai+Tuticorin+Tamil+Nadu"
+                href="https://maps.google.com/?q=5A/394+Caldwell+Colony+3rd+Street+Tuticorin+Tamil+Nadu"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center justify-center bg-white py-3 text-sm font-semibold text-primary transition-colors hover:bg-slate-50"
@@ -149,6 +149,7 @@ export default function ContactPage() {
 
             <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
               <h3 className="text-lg font-bold text-slate-900">{BUSINESS.name}</h3>
+              <p className="text-sm text-slate-500">Washing Machine Service Centre</p>
               <ul className="mt-4 space-y-3 text-sm text-slate-600">
                 <li className="flex items-start gap-3">
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />

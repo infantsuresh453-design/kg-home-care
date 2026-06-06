@@ -96,12 +96,6 @@ export const SERVICES = [
     image: "pcb",
   },
   {
-    slug: "amc",
-    name: "AMC Service",
-    short: "Annual Maintenance — 2 visits, priority support, parts discount.",
-    image: "installation",
-  },
-  {
     slug: "spare-parts",
     name: "Spare Parts Replacement",
     short: "Genuine OEM spare parts for all major brands.",

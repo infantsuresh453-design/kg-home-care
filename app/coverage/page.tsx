@@ -4,12 +4,12 @@ import { Section } from "@/components/site/Section";
 import { MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Service Areas — Tuticorin, Pudukkottai & Nearby",
+  title: "Service Areas — KG Home Care Washing Machine Service Centre",
   description:
-    "KG Home Care washing machine service covers Tuticorin, Pudukkottai, Kovilpatti, Tiruchendur and surrounding villages across Tamil Nadu.",
+    "KG Home Care washing machine service covers Tuticorin, Kovilpatti, Tiruchendur and surrounding villages across Tamil Nadu.",
   openGraph: {
     title: "Service Coverage — KG Home Care",
-    description: "We serve Tuticorin, Pudukkottai and 14+ surrounding towns and villages.",
+    description: "We serve Tuticorin and 14+ surrounding towns and villages.",
     url: "/coverage",
   },
   alternates: { canonical: "/coverage" },
@@ -27,7 +27,7 @@ export default function CoveragePage() {
       <PageHeader
         eyebrow="Service Coverage"
         title="Doorstep washing machine service across South Tamil Nadu."
-        description="Based in Pudukkottai, Tuticorin — we serve customers across the district and nearby villages."
+        description="Based in Tuticorin — we serve customers across the district and nearby villages."
       />
       <div className="relative overflow-hidden">
         {/* Dot grid pattern */}
@@ -65,7 +65,7 @@ export default function CoveragePage() {
             <div className="overflow-hidden rounded-3xl border border-border bg-muted shadow-lift">
               <iframe
                 title="KG Home Care location"
-                src="https://www.google.com/maps?q=Pudukkottai+Tuticorin+Tamil+Nadu&output=embed"
+                src="https://www.google.com/maps?q=5A%2F394+Caldwell+Colony+3rd+Street+Tuticorin+Tamil+Nadu&output=embed"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="h-full min-h-[420px] w-full"

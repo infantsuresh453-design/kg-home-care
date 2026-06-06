@@ -64,12 +64,6 @@ const DETAIL: Record<string, { intro: string; includes: string[]; price: string 
     includes: ["Door lock replacement", "Interlock switch service", "Door hinge alignment", "Safety check"],
     price: "Starts at ₹599",
   },
-  amc: {
-    intro:
-      "Annual Maintenance Contract: 2 scheduled service visits per year, priority response and a discount on all spare parts.",
-    includes: ["2 service visits / year", "Priority technician dispatch", "10% off spare parts", "Free inspection visits"],
-    price: "₹2,499 / year",
-  },
   "spare-parts": {
     intro:
       "Genuine OEM spare parts for all major brands — sourced and fitted by our technicians.",
@@ -101,7 +95,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           ? service.short
           : service.description || "",
     openGraph: {
-      title: `${service.name} — KG Home Care`,
+      title: `${service.name} — KG Home Care | Washing Machine Service Centre`,
       description:
         "short" in service ? service.short : service.description || "",
       type: "article",
