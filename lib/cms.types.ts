@@ -61,6 +61,17 @@ export type SeoPageRecord = {
   status: SeoPageStatus;
   template: SeoTemplate;
   image_url: string | null;
+  // Section 2: subheading + heading + content (left) + image (right)
+  section2_heading: string | null;
+  section2_subheading: string | null;
+  section2_content: string | null;
+  section2_image_url: string | null;
+  // Section 3: heading + content
+  section3_heading: string | null;
+  section3_content: string | null;
+  // Section 4: heading + content
+  section4_heading: string | null;
+  section4_content: string | null;
   faq: Array<{ question: string; answer: string }>;
   testimonials: Array<{
     name: string;
