@@ -31,6 +31,7 @@ export default async function DashboardLayout({
         <div className="border-b border-slate-700 px-5 py-5">
           <p className="text-[10px] font-bold uppercase tracking-widest text-blue-400">Admin Dashboard</p>
           <p className="mt-1 text-base font-extrabold text-white">KG Home Care</p>
+          <p className="text-[10px] text-slate-400">Washing Machine Service Centre</p>
         </div>
 
         {/* nav */}

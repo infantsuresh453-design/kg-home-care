@@ -11,6 +11,7 @@ export function SiteFooter() {
         {/* ── Brand + contact ── */}
         <div>
           <span className="text-base font-extrabold tracking-tight text-white">KG Home Care</span>
+          <p className="mt-1 text-xs font-medium text-white/40">Washing Machine Service Centre</p>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-white/50">
             Tuticorin&apos;s trusted washing machine service, installation and maintenance — certified technicians, genuine parts.
           </p>

@@ -154,8 +154,8 @@
   .shadow-glow { box-shadow: var(--shadow-glow); }
   .bg-grid {
     background-image:
-      linear-gradient(to right, oklch(0.93 0.01 256 / 0.6) 1px, transparent 1px),
-      linear-gradient(to bottom, oklch(0.93 0.01 256 / 0.6) 1px, transparent 1px);
+      linear-gradient(to right, oklch(0.93 0.01 256 / 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, oklch(0.93 0.01 256 / 0.1) 1px, transparent 1px);
     background-size: 32px 32px;
   }
   .bg-radial-primary {

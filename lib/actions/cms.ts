@@ -365,6 +365,13 @@ export async function createSeoPageAction(
       ? await uploadImage("seo-pages", slug, imageFile)
       : null;
 
+  // Section 2 image
+  const section2ImageFile = formData.get("section2_image") as File | null;
+  const section2ImageUrl =
+    section2ImageFile && section2ImageFile.size > 0
+      ? await uploadImage("seo-pages", `${slug}-s2`, section2ImageFile)
+      : null;
+
   const supabase = await createServerSupabaseClient();
   const { error } = await supabase.from("seo_pages").insert({
     title,
@@ -381,6 +388,14 @@ export async function createSeoPageAction(
     status: readString(formData, "status") || "Draft",
     template: readString(formData, "template") || "default",
     image_url: imageUrl,
+    section2_heading: readNullableString(formData, "section2_heading"),
+    section2_subheading: readNullableString(formData, "section2_subheading"),
+    section2_content: readNullableString(formData, "section2_content"),
+    section2_image_url: section2ImageUrl,
+    section3_heading: readNullableString(formData, "section3_heading"),
+    section3_content: readNullableString(formData, "section3_content"),
+    section4_heading: readNullableString(formData, "section4_heading"),
+    section4_content: readNullableString(formData, "section4_content"),
     faq: parseFaqText(readString(formData, "faq_text")),
     testimonials: parseTestimonialsText(readString(formData, "testimonials_text")),
     other_tags: readNullableString(formData, "other_tags"),
@@ -388,6 +403,7 @@ export async function createSeoPageAction(
 
   if (error) {
     if (imageUrl) await deleteImage(imageUrl);
+    if (section2ImageUrl) await deleteImage(section2ImageUrl);
     return {
       success: false,
       message: error.message,
@@ -429,6 +445,23 @@ export async function updateSeoPageAction(
     imageUrl = await uploadImage("seo-pages", slug, imageFile);
   }
 
+  // Section 2 image handling
+  const existingSection2ImageUrl = readNullableString(formData, "existing_section2_image_url");
+  const shouldRemoveSection2Image = readString(formData, "remove_section2_image") === "true";
+  const section2ImageFile = formData.get("section2_image") as File | null;
+
+  let section2ImageUrl = existingSection2ImageUrl;
+
+  if (shouldRemoveSection2Image && existingSection2ImageUrl) {
+    await deleteImage(existingSection2ImageUrl);
+    section2ImageUrl = null;
+  }
+
+  if (section2ImageFile && section2ImageFile.size > 0) {
+    if (existingSection2ImageUrl) await deleteImage(existingSection2ImageUrl);
+    section2ImageUrl = await uploadImage("seo-pages", `${slug}-s2`, section2ImageFile);
+  }
+
   const supabase = await createServerSupabaseClient();
   const { error } = await supabase
     .from("seo_pages")
@@ -447,6 +480,14 @@ export async function updateSeoPageAction(
       status: readString(formData, "status") || "Draft",
       template: readString(formData, "template") || "default",
       image_url: imageUrl,
+      section2_heading: readNullableString(formData, "section2_heading"),
+      section2_subheading: readNullableString(formData, "section2_subheading"),
+      section2_content: readNullableString(formData, "section2_content"),
+      section2_image_url: section2ImageUrl,
+      section3_heading: readNullableString(formData, "section3_heading"),
+      section3_content: readNullableString(formData, "section3_content"),
+      section4_heading: readNullableString(formData, "section4_heading"),
+      section4_content: readNullableString(formData, "section4_content"),
       faq: parseFaqText(readString(formData, "faq_text")),
       testimonials: parseTestimonialsText(readString(formData, "testimonials_text")),
       other_tags: readNullableString(formData, "other_tags"),

@@ -100,6 +100,8 @@ export function SeoPageForm({ action, initialData, submitLabel }: SeoPageFormPro
   const [manualSlug, setManualSlug] = useState(Boolean(initialData?.slug));
   const [preview, setPreview] = useState(initialData?.image_url ?? "");
   const [removeImage, setRemoveImage] = useState(false);
+  const [section2Preview, setSection2Preview] = useState(initialData?.section2_image_url ?? "");
+  const [removeSection2Image, setRemoveSection2Image] = useState(false);
 
   useEffect(() => {
     if (!state.message) return;
@@ -119,15 +121,17 @@ export function SeoPageForm({ action, initialData, submitLabel }: SeoPageFormPro
     <form action={formAction}>
       <input type="hidden" name="remove_image" value={removeImage ? "true" : "false"} />
       <input type="hidden" name="existing_image_url" value={initialData?.image_url ?? ""} />
+      <input type="hidden" name="remove_section2_image" value={removeSection2Image ? "true" : "false"} />
+      <input type="hidden" name="existing_section2_image_url" value={initialData?.section2_image_url ?? ""} />
 
       {/* ─── Page Structure Guide ─── */}
       <div className="mb-6 rounded-2xl border border-blue-500/20 bg-blue-500/5 p-4">
         <div className="flex items-start gap-3">
           <Layers className="mt-0.5 h-5 w-5 shrink-0 text-blue-400" />
           <div>
-            <p className="text-sm font-bold text-blue-300">Page Sections (auto-generated)</p>
+            <p className="text-sm font-bold text-blue-300">Page Sections (new structure)</p>
             <p className="mt-1 text-xs leading-relaxed text-slate-400">
-              Hero → Trust Bar → Services → Why Choose Us → How It Works → Reviews → CTA Banner → Content → FAQ → Footer CTA
+              1. Hero → 2. Content + Image → 3. Content Block → 4. Content Block → 5. Testimonials → 6. FAQ → 7. Lead Form
             </p>
           </div>
         </div>
@@ -138,9 +142,9 @@ export function SeoPageForm({ action, initialData, submitLabel }: SeoPageFormPro
         <div className="space-y-6">
 
           {/* Section 1: Hero */}
-          <FormSection icon={Megaphone} title="Hero Section" badge="Section 1">
+          <FormSection icon={Megaphone} title="Section 1 — Hero" badge="Hero">
             <div className="grid gap-5">
-              <FormField label="H1 Heading" id="heading" hint="Include location keyword (e.g. 'Washing Machine Service in Anna Nagar')">
+              <FormField label="H1 Heading" id="heading" hint="Main heading displayed in the hero section">
                 <input
                   id="heading"
                   name="heading"
@@ -154,14 +158,14 @@ export function SeoPageForm({ action, initialData, submitLabel }: SeoPageFormPro
                   }}
                 />
               </FormField>
-              <FormField label="Subheading" id="subheading" hint="Supporting text below H1 — describe the service briefly">
+              <FormField label="Subheading" id="subheading" hint="Supporting text below H1">
                 <textarea
                   id="subheading"
                   name="subheading"
                   className={textareaClass}
                   defaultValue={initialData?.subheading ?? ""}
                   rows={2}
-                  placeholder="Professional doorstep washing machine service in [Location]. Same day visit, genuine parts, written warranty."
+                  placeholder="Professional doorstep washing machine service in [Location]."
                 />
               </FormField>
               <div className="grid gap-5 md:grid-cols-2">
@@ -187,22 +191,131 @@ export function SeoPageForm({ action, initialData, submitLabel }: SeoPageFormPro
             </div>
           </FormSection>
 
-          {/* Section 8: Content */}
-          <FormSection icon={FileText} title="Page Content (Rich Text)" badge="Section 8">
-            <div className="space-y-1.5">
-              <p className="text-[11px] text-slate-500">
-                This content appears between the CTA banner and FAQ. Use headings, lists, and bold to structure content for SEO.
-              </p>
-              <RichTextEditor
-                name="content"
-                defaultValue={initialData?.content ?? ""}
-                placeholder="Write detailed service content with H2/H3 headings targeting long-tail keywords..."
-              />
+          {/* Section 2: Subheading + Heading + Content (left) + Image (right) */}
+          <FormSection icon={FileText} title="Section 2 — Content + Image" badge="Left-Right">
+            <div className="grid gap-5">
+              <FormField label="Subheading / Eyebrow" id="section2_subheading" hint="Small text above the heading">
+                <input
+                  id="section2_subheading"
+                  name="section2_subheading"
+                  className={inputClass}
+                  defaultValue={initialData?.section2_subheading ?? ""}
+                  placeholder="Our Services"
+                />
+              </FormField>
+              <FormField label="Heading" id="section2_heading" hint="Section heading">
+                <input
+                  id="section2_heading"
+                  name="section2_heading"
+                  className={inputClass}
+                  defaultValue={initialData?.section2_heading ?? ""}
+                  placeholder="Why We Are the Best Choice"
+                />
+              </FormField>
+              <div className="space-y-1.5">
+                <label className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+                  Content (left side)
+                </label>
+                <RichTextEditor
+                  name="section2_content"
+                  defaultValue={initialData?.section2_content ?? ""}
+                  placeholder="Write content for the left column..."
+                />
+              </div>
+              {/* Section 2 Image (right side) */}
+              <div className="space-y-3">
+                <label className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+                  Image (right side)
+                </label>
+                <label className="flex cursor-pointer flex-col items-center gap-3 rounded-xl border-2 border-dashed border-slate-600/80 bg-slate-900/40 p-4 text-center transition-colors hover:border-blue-500/50 hover:bg-slate-900/60">
+                  <div className="grid h-10 w-10 place-items-center rounded-full bg-slate-700">
+                    <ImageIcon className="h-5 w-5 text-slate-400" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-slate-300">Click to upload section image</p>
+                    <p className="mt-0.5 text-[11px] text-slate-500">PNG, JPG or WebP</p>
+                  </div>
+                  <input
+                    name="section2_image"
+                    type="file"
+                    accept="image/png,image/jpeg,image/webp"
+                    className="hidden"
+                    onChange={(event) => {
+                      const file = event.target.files?.[0];
+                      if (!file) return;
+                      setRemoveSection2Image(false);
+                      setSection2Preview(URL.createObjectURL(file));
+                    }}
+                  />
+                </label>
+                {section2Preview && !removeSection2Image ? (
+                  <div className="relative">
+                    <img src={section2Preview} alt="Section 2 Preview" className="w-full rounded-xl border border-slate-700 object-cover" />
+                    <button
+                      type="button"
+                      onClick={() => setRemoveSection2Image(true)}
+                      className="absolute right-2 top-2 grid h-7 w-7 place-items-center rounded-full bg-red-500/90 text-white shadow-lg transition-colors hover:bg-red-600"
+                    >
+                      <X className="h-3.5 w-3.5" />
+                    </button>
+                  </div>
+                ) : null}
+              </div>
             </div>
           </FormSection>
 
-          {/* Section 6: Reviews */}
-          <FormSection icon={Star} title="Reviews / Testimonials" badge="Section 6">
+          {/* Section 3: Heading + Content */}
+          <FormSection icon={FileText} title="Section 3 — Content Block" badge="Full Width">
+            <div className="grid gap-5">
+              <FormField label="Heading" id="section3_heading" hint="Section heading">
+                <input
+                  id="section3_heading"
+                  name="section3_heading"
+                  className={inputClass}
+                  defaultValue={initialData?.section3_heading ?? ""}
+                  placeholder="How It Works"
+                />
+              </FormField>
+              <div className="space-y-1.5">
+                <label className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+                  Content
+                </label>
+                <RichTextEditor
+                  name="section3_content"
+                  defaultValue={initialData?.section3_content ?? ""}
+                  placeholder="Write content for section 3..."
+                />
+              </div>
+            </div>
+          </FormSection>
+
+          {/* Section 4: Heading + Content */}
+          <FormSection icon={FileText} title="Section 4 — Content Block" badge="Full Width">
+            <div className="grid gap-5">
+              <FormField label="Heading" id="section4_heading" hint="Section heading">
+                <input
+                  id="section4_heading"
+                  name="section4_heading"
+                  className={inputClass}
+                  defaultValue={initialData?.section4_heading ?? ""}
+                  placeholder="Our Pricing"
+                />
+              </FormField>
+              <div className="space-y-1.5">
+                <label className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+                  Content
+                </label>
+                <RichTextEditor
+                  name="section4_content"
+                  defaultValue={initialData?.section4_content ?? ""}
+                  placeholder="Write content for section 4..."
+                />
+              </div>
+            </div>
+          </FormSection>
+
+          {/* Section 5: Testimonials */}
+          <FormSection icon={Star} title="Section 5 — Testimonials" badge="Reviews">
             <div className="space-y-1.5">
               <p className="text-[11px] text-slate-500">
                 Include locality names in reviews for hyperlocal SEO. Format: Name / Trip (locality) / Rating / Review
@@ -218,8 +331,8 @@ export function SeoPageForm({ action, initialData, submitLabel }: SeoPageFormPro
             </div>
           </FormSection>
 
-          {/* Section 9: FAQ */}
-          <FormSection icon={MessageSquare} title="FAQ Section (Schema-Ready)" badge="Section 9">
+          {/* Section 6: FAQ */}
+          <FormSection icon={MessageSquare} title="Section 6 — FAQ" badge="Schema-Ready">
             <div className="space-y-1.5">
               <p className="text-[11px] text-slate-500">
                 Target &ldquo;how much does service cost in [City]&rdquo; type queries. Each Q&A gets structured FAQ schema markup.
@@ -230,10 +343,13 @@ export function SeoPageForm({ action, initialData, submitLabel }: SeoPageFormPro
                 className={textareaClass}
                 defaultValue={faqText}
                 rows={10}
-                placeholder={`Q: How much does washing machine service cost in Anna Nagar?\nA: Basic inspection starts at ₹299. Final cost depends on the issue — we share the estimate before starting.\n\nQ: Do you provide same day service?\nA: Yes, book before 4 PM and our technician will visit the same day.\n\nQ: Which brands do you service?\nA: We service all brands including Samsung, LG, Whirlpool, Bosch, IFB, and Haier.`}
+                placeholder={`Q: How much does washing machine service cost in Anna Nagar?\nA: Basic inspection starts at ₹299. Final cost depends on the issue — we share the estimate before starting.\n\nQ: Do you provide same day service?\nA: Yes, book before 4 PM and our technician will visit the same day.`}
               />
             </div>
           </FormSection>
+
+          {/* Legacy content field (hidden, for backward compat) */}
+          <input type="hidden" name="content" value={initialData?.content ?? ""} />
 
           {/* SEO Metadata */}
           <FormSection icon={Globe} title="SEO Metadata" badge="Head Tags">
@@ -315,7 +431,7 @@ export function SeoPageForm({ action, initialData, submitLabel }: SeoPageFormPro
                   required
                 />
               </FormField>
-              <FormField label="Target location" id="location" hint="Used in H1, headings, CTAs, and schema">
+              <FormField label="Target location" id="location" hint="Used in headings, CTAs, and schema">
                 <div className="relative">
                   <MapPin className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" />
                   <input
@@ -352,7 +468,7 @@ export function SeoPageForm({ action, initialData, submitLabel }: SeoPageFormPro
             </div>
           </FormSection>
 
-          {/* Featured Image */}
+          {/* Hero Image */}
           <FormSection icon={ImageIcon} title="Hero Image">
             <div className="space-y-4">
               <label className="flex cursor-pointer flex-col items-center gap-3 rounded-xl border-2 border-dashed border-slate-600/80 bg-slate-900/40 p-6 text-center transition-colors hover:border-blue-500/50 hover:bg-slate-900/60">
@@ -361,7 +477,7 @@ export function SeoPageForm({ action, initialData, submitLabel }: SeoPageFormPro
                 </div>
                 <div>
                   <p className="text-sm font-medium text-slate-300">Click to upload</p>
-                  <p className="mt-0.5 text-[11px] text-slate-500">PNG, JPG or WebP · Used in hero card</p>
+                  <p className="mt-0.5 text-[11px] text-slate-500">PNG, JPG or WebP · Hero background</p>
                 </div>
                 <input
                   name="image"
@@ -396,16 +512,13 @@ export function SeoPageForm({ action, initialData, submitLabel }: SeoPageFormPro
             <p className="text-xs font-bold uppercase tracking-wide text-slate-400">Page Preview Structure</p>
             <div className="mt-4 space-y-2">
               {[
-                { num: "1", label: "Hero + CTAs", color: "bg-blue-500" },
-                { num: "2", label: "Trust Bar", color: "bg-emerald-500" },
-                { num: "3", label: "Services (auto)", color: "bg-amber-500" },
-                { num: "4", label: "Why Choose Us (auto)", color: "bg-violet-500" },
-                { num: "5", label: "How It Works (auto)", color: "bg-pink-500" },
-                { num: "6", label: "Reviews", color: "bg-amber-500" },
-                { num: "7", label: "CTA Banner (auto)", color: "bg-blue-500" },
-                { num: "8", label: "Rich Content", color: "bg-emerald-500" },
-                { num: "9", label: "FAQ", color: "bg-violet-500" },
-                { num: "10", label: "Footer CTA (auto)", color: "bg-pink-500" },
+                { num: "1", label: "Hero (heading + CTA)", color: "bg-blue-500" },
+                { num: "2", label: "Content + Image", color: "bg-emerald-500" },
+                { num: "3", label: "Content Block", color: "bg-amber-500" },
+                { num: "4", label: "Content Block", color: "bg-violet-500" },
+                { num: "5", label: "Testimonials", color: "bg-pink-500" },
+                { num: "6", label: "FAQ", color: "bg-amber-500" },
+                { num: "7", label: "Lead Form", color: "bg-blue-500" },
               ].map(({ num, label, color }) => (
                 <div key={num} className="flex items-center gap-3">
                   <span className={`grid h-5 w-5 shrink-0 place-items-center rounded text-[10px] font-bold text-white ${color}`}>

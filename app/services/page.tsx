@@ -9,13 +9,13 @@ import { ScrollReveal } from "@/components/site/ScrollReveal";
 import { ServiceHeroForm } from "@/components/site/ServiceHeroForm";
 
 export const metadata: Metadata = {
-  title: "Washing Machine Services in Tuticorin — KG Home Care",
+  title: "Washing Machine Services in Tuticorin — KG Home Care | Washing Machine Service Centre",
   description:
     "Expert front-load and top-load washing machine service, installation, drum cleaning, and maintenance in Tuticorin.",
   openGraph: {
     title: "Washing Machine Services in Tuticorin",
     description:
-      "Front-load & top-load washing machine service, installation, cleaning & AMC in Tuticorin.",
+      "Front-load & top-load washing machine service, installation & cleaning in Tuticorin.",
     url: "/services",
   },
   alternates: { canonical: "/services" },

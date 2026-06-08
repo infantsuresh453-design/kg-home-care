@@ -19,7 +19,22 @@ const samplePage = {
   cta_text: "Call Now — ₹299 Only",
   cta_link: null,
   image_url: null,
-  content: `<h2>Expert Washing Machine Repair Service in Anna Nagar</h2><p>KG Home Care provides fast, reliable washing machine repair services in Anna Nagar, Chennai. Whether your machine is leaking, not spinning, making strange noises, or showing error codes — our certified technicians can fix it at your doorstep.</p><h3>Brands We Service in Anna Nagar</h3><p>We repair all major washing machine brands including:</p><ul><li><strong>Samsung</strong> — Front load & top load models</li><li><strong>LG</strong> — Inverter, direct drive & semi-automatic</li><li><strong>Whirlpool</strong> — All capacity models</li><li><strong>Bosch</strong> — Front loader specialists</li><li><strong>IFB</strong> — Senator, Senorita, Executive series</li><li><strong>Haier</strong> — Fully automatic & semi-auto</li></ul><h3>Our Pricing</h3><p>We believe in transparent pricing with no hidden charges:</p><ul><li><strong>Inspection & Diagnosis:</strong> ₹299 (adjusted against repair)</li><li><strong>Basic Repair:</strong> ₹499 – ₹999</li><li><strong>Motor/PCB Repair:</strong> ₹899 – ₹2,499</li><li><strong>Deep Cleaning:</strong> ₹999</li><li><strong>Installation:</strong> ₹499</li></ul><h3>Service Areas Near Anna Nagar</h3><p>Our technicians serve Anna Nagar and all surrounding areas including Anna Nagar East, Anna Nagar West, Thirumangalam, Mogappair, Aminjikarai, Shenoy Nagar, Kilpauk, and Arumbakkam.</p>`,
+  content: null,
+
+  // Section 2: Content + Image
+  section2_subheading: "Our Services",
+  section2_heading: "Washing Machine Problems We Fix in Anna Nagar",
+  section2_content: `<p>From simple fixes to complex board-level services — our certified technicians handle it all at your doorstep.</p><ul><li><strong>Not Spinning / Vibrating</strong> — Drum, bearing, belt & motor issues</li><li><strong>Water Not Draining</strong> — Pump, hose blockage & drain valve service</li><li><strong>Leaking Water</strong> — Gasket, inlet valve & tub seal replacement</li><li><strong>PCB / Error Codes</strong> — Component-level board diagnosis & soldering</li><li><strong>Noisy Operation</strong> — Bearing, shock absorber & suspension service</li><li><strong>Not Starting / Dead</strong> — Power supply, door lock & wiring faults</li></ul>`,
+  section2_image_url: null,
+
+  // Section 3: Content Block
+  section3_heading: "Brands We Service in Anna Nagar",
+  section3_content: `<p>We repair all major washing machine brands including:</p><ul><li><strong>Samsung</strong> — Front load & top load models</li><li><strong>LG</strong> — Inverter, direct drive & semi-automatic</li><li><strong>Whirlpool</strong> — All capacity models</li><li><strong>Bosch</strong> — Front loader specialists</li><li><strong>IFB</strong> — Senator, Senorita, Executive series</li><li><strong>Haier</strong> — Fully automatic & semi-auto</li></ul>`,
+
+  // Section 4: Content Block
+  section4_heading: "Our Pricing — Transparent & Honest",
+  section4_content: `<p>We believe in transparent pricing with no hidden charges:</p><ul><li><strong>Inspection & Diagnosis:</strong> ₹299 (adjusted against repair)</li><li><strong>Basic Repair:</strong> ₹499 – ₹999</li><li><strong>Motor/PCB Repair:</strong> ₹899 – ₹2,499</li><li><strong>Deep Cleaning:</strong> ₹999</li><li><strong>Installation:</strong> ₹499</li></ul><p>Our technicians serve Anna Nagar and all surrounding areas including Anna Nagar East, Anna Nagar West, Thirumangalam, Mogappair, Aminjikarai, Shenoy Nagar, Kilpauk, and Arumbakkam.</p>`,
+
   faq: [
     { question: "How much does washing machine repair cost in Anna Nagar?", answer: "Our inspection charge is ₹299 which gets adjusted against the final repair bill. Basic repairs start at ₹499. We always share the full estimate before starting any work." },
     { question: "Do you provide same day washing machine service in Anna Nagar?", answer: "Yes! Book before 4 PM and our certified technician will reach your doorstep in Anna Nagar the same day." },
@@ -32,16 +47,15 @@ const samplePage = {
     { name: "Priya Sundaram", trip: "Anna Nagar West, Chennai", rating: 5, review: "LG machine wasn't spinning. Diagnosed quickly — worn belt. Replaced on the spot with genuine part. Works perfectly." },
     { name: "Mohammed Irfan", trip: "Thirumangalam, Chennai", rating: 5, review: "Deep cleaning for my 3-year-old Whirlpool. The amount of gunk cleaned out was shocking. Machine runs like new." },
     { name: "Lakshmi Narayanan", trip: "Mogappair, Chennai", rating: 5, review: "PCB issue in my IFB machine. Others quoted ₹4000+ for replacement. These guys repaired the board for ₹1200. Honest pricing." },
-    { name: "Deepa Rajendran", trip: "Anna Nagar, Chennai", rating: 5, review: "AMC service — two visits done, thorough cleaning and checkup both times. Machine running smoothly. Worth every rupee." },
+    { name: "Deepa Rajendran", trip: "Anna Nagar, Chennai", rating: 5, review: "Installation of new Samsung front-load. Leveled perfectly, connected all hoses, did a test wash. Very neat work." },
     { name: "Karthik S", trip: "Aminjikarai, Chennai", rating: 5, review: "Installation of new Bosch front-load. Leveled perfectly, connected all hoses, did a test wash. Very neat work." }
   ],
   other_tags: null
 };
 
 async function seed() {
-  console.log("Inserting sample SEO page via SQL...");
+  console.log("Inserting sample SEO page...");
   
-  // Use rpc to bypass RLS (if available) or try direct insert
   const { data, error } = await supabase
     .from("seo_pages")
     .insert(samplePage)
@@ -55,10 +69,18 @@ async function seed() {
     
     const faqJson = JSON.stringify(samplePage.faq).replace(/'/g, "''");
     const testimonialsJson = JSON.stringify(samplePage.testimonials).replace(/'/g, "''");
-    const contentEscaped = samplePage.content.replace(/'/g, "''");
+    const s2ContentEscaped = (samplePage.section2_content || "").replace(/'/g, "''");
+    const s3ContentEscaped = (samplePage.section3_content || "").replace(/'/g, "''");
+    const s4ContentEscaped = (samplePage.section4_content || "").replace(/'/g, "''");
     
-    console.log(`INSERT INTO seo_pages (title, slug, status, template, location, heading, subheading, meta_title, meta_description, keywords, cta_text, content, faq, testimonials)
-VALUES (
+    console.log(`INSERT INTO seo_pages (
+  title, slug, status, template, location, heading, subheading,
+  meta_title, meta_description, keywords, cta_text,
+  section2_subheading, section2_heading, section2_content,
+  section3_heading, section3_content,
+  section4_heading, section4_content,
+  faq, testimonials
+) VALUES (
   '${samplePage.title}',
   '${samplePage.slug}',
   '${samplePage.status}',
@@ -70,7 +92,13 @@ VALUES (
   '${samplePage.meta_description}',
   '${samplePage.keywords}',
   '${samplePage.cta_text}',
-  '${contentEscaped}',
+  '${samplePage.section2_subheading}',
+  '${samplePage.section2_heading}',
+  '${s2ContentEscaped}',
+  '${samplePage.section3_heading}',
+  '${s3ContentEscaped}',
+  '${samplePage.section4_heading}',
+  '${s4ContentEscaped}',
   '${faqJson}'::jsonb,
   '${testimonialsJson}'::jsonb
 );`);
