@@ -359,18 +359,10 @@ export async function createSeoPageAction(
     };
   }
 
-  const imageFile = formData.get("image") as File | null;
-  const imageUrl =
-    imageFile && imageFile.size > 0
-      ? await uploadImage("seo-pages", slug, imageFile)
-      : null;
+  const imageUrl = readNullableString(formData, "image_url");
 
   // Section 2 image
-  const section2ImageFile = formData.get("section2_image") as File | null;
-  const section2ImageUrl =
-    section2ImageFile && section2ImageFile.size > 0
-      ? await uploadImage("seo-pages", `${slug}-s2`, section2ImageFile)
-      : null;
+  const section2ImageUrl = readNullableString(formData, "section2_image_url");
 
   const supabase = await createServerSupabaseClient();
   const { error } = await supabase.from("seo_pages").insert({
@@ -402,8 +394,6 @@ export async function createSeoPageAction(
   });
 
   if (error) {
-    if (imageUrl) await deleteImage(imageUrl);
-    if (section2ImageUrl) await deleteImage(section2ImageUrl);
     return {
       success: false,
       message: error.message,
@@ -429,38 +419,10 @@ export async function updateSeoPageAction(
   const title = readString(formData, "title");
   const heading = readString(formData, "heading");
   const slug = readString(formData, "slug") || slugify(title || heading);
-  const existingImageUrl = readNullableString(formData, "existing_image_url");
-  const shouldRemoveImage = readString(formData, "remove_image") === "true";
-  const imageFile = formData.get("image") as File | null;
-
-  let imageUrl = existingImageUrl;
-
-  if (shouldRemoveImage && existingImageUrl) {
-    await deleteImage(existingImageUrl);
-    imageUrl = null;
-  }
-
-  if (imageFile && imageFile.size > 0) {
-    if (existingImageUrl) await deleteImage(existingImageUrl);
-    imageUrl = await uploadImage("seo-pages", slug, imageFile);
-  }
+  const imageUrl = readNullableString(formData, "image_url");
 
   // Section 2 image handling
-  const existingSection2ImageUrl = readNullableString(formData, "existing_section2_image_url");
-  const shouldRemoveSection2Image = readString(formData, "remove_section2_image") === "true";
-  const section2ImageFile = formData.get("section2_image") as File | null;
-
-  let section2ImageUrl = existingSection2ImageUrl;
-
-  if (shouldRemoveSection2Image && existingSection2ImageUrl) {
-    await deleteImage(existingSection2ImageUrl);
-    section2ImageUrl = null;
-  }
-
-  if (section2ImageFile && section2ImageFile.size > 0) {
-    if (existingSection2ImageUrl) await deleteImage(existingSection2ImageUrl);
-    section2ImageUrl = await uploadImage("seo-pages", `${slug}-s2`, section2ImageFile);
-  }
+  const section2ImageUrl = readNullableString(formData, "section2_image_url");
 
   const supabase = await createServerSupabaseClient();
   const { error } = await supabase

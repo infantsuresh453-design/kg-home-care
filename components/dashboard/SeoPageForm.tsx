@@ -99,9 +99,7 @@ export function SeoPageForm({ action, initialData, submitLabel }: SeoPageFormPro
   const [slug, setSlug] = useState(initialData?.slug ?? "");
   const [manualSlug, setManualSlug] = useState(Boolean(initialData?.slug));
   const [preview, setPreview] = useState(initialData?.image_url ?? "");
-  const [removeImage, setRemoveImage] = useState(false);
   const [section2Preview, setSection2Preview] = useState(initialData?.section2_image_url ?? "");
-  const [removeSection2Image, setRemoveSection2Image] = useState(false);
 
   useEffect(() => {
     if (!state.message) return;
@@ -119,11 +117,6 @@ export function SeoPageForm({ action, initialData, submitLabel }: SeoPageFormPro
 
   return (
     <form action={formAction}>
-      <input type="hidden" name="remove_image" value={removeImage ? "true" : "false"} />
-      <input type="hidden" name="existing_image_url" value={initialData?.image_url ?? ""} />
-      <input type="hidden" name="remove_section2_image" value={removeSection2Image ? "true" : "false"} />
-      <input type="hidden" name="existing_section2_image_url" value={initialData?.section2_image_url ?? ""} />
-
       {/* ─── Page Structure Guide ─── */}
       <div className="mb-6 rounded-2xl border border-blue-500/20 bg-blue-500/5 p-4">
         <div className="flex items-start gap-3">
@@ -223,44 +216,29 @@ export function SeoPageForm({ action, initialData, submitLabel }: SeoPageFormPro
                 />
               </div>
               {/* Section 2 Image (right side) */}
-              <div className="space-y-3">
-                <label className="text-xs font-semibold uppercase tracking-wide text-slate-400">
-                  Image (right side)
-                </label>
-                <label className="flex cursor-pointer flex-col items-center gap-3 rounded-xl border-2 border-dashed border-slate-600/80 bg-slate-900/40 p-4 text-center transition-colors hover:border-blue-500/50 hover:bg-slate-900/60">
-                  <div className="grid h-10 w-10 place-items-center rounded-full bg-slate-700">
-                    <ImageIcon className="h-5 w-5 text-slate-400" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-medium text-slate-300">Click to upload section image</p>
-                    <p className="mt-0.5 text-[11px] text-slate-500">PNG, JPG or WebP</p>
-                  </div>
-                  <input
-                    name="section2_image"
-                    type="file"
-                    accept="image/png,image/jpeg,image/webp"
-                    className="hidden"
-                    onChange={(event) => {
-                      const file = event.target.files?.[0];
-                      if (!file) return;
-                      setRemoveSection2Image(false);
-                      setSection2Preview(URL.createObjectURL(file));
-                    }}
-                  />
-                </label>
-                {section2Preview && !removeSection2Image ? (
-                  <div className="relative">
-                    <img src={section2Preview} alt="Section 2 Preview" className="w-full rounded-xl border border-slate-700 object-cover" />
-                    <button
-                      type="button"
-                      onClick={() => setRemoveSection2Image(true)}
-                      className="absolute right-2 top-2 grid h-7 w-7 place-items-center rounded-full bg-red-500/90 text-white shadow-lg transition-colors hover:bg-red-600"
-                    >
-                      <X className="h-3.5 w-3.5" />
-                    </button>
-                  </div>
-                ) : null}
-              </div>
+              <FormField label="Image URL (right side)" id="section2_image_url" hint="External image link for the right column">
+                <input
+                  id="section2_image_url"
+                  name="section2_image_url"
+                  type="url"
+                  className={inputClass}
+                  defaultValue={initialData?.section2_image_url ?? ""}
+                  placeholder="https://example.com/section-image.jpg"
+                  onChange={(event) => setSection2Preview(event.target.value)}
+                />
+              </FormField>
+              {section2Preview ? (
+                <div className="relative">
+                  <img src={section2Preview} alt="Section 2 Preview" className="w-full rounded-xl border border-slate-700 object-cover" />
+                  <button
+                    type="button"
+                    onClick={() => setSection2Preview("")}
+                    className="absolute right-2 top-2 grid h-7 w-7 place-items-center rounded-full bg-red-500/90 text-white shadow-lg transition-colors hover:bg-red-600"
+                  >
+                    <X className="h-3.5 w-3.5" />
+                  </button>
+                </div>
+              ) : null}
             </div>
           </FormSection>
 
@@ -471,33 +449,23 @@ export function SeoPageForm({ action, initialData, submitLabel }: SeoPageFormPro
           {/* Hero Image */}
           <FormSection icon={ImageIcon} title="Hero Image">
             <div className="space-y-4">
-              <label className="flex cursor-pointer flex-col items-center gap-3 rounded-xl border-2 border-dashed border-slate-600/80 bg-slate-900/40 p-6 text-center transition-colors hover:border-blue-500/50 hover:bg-slate-900/60">
-                <div className="grid h-10 w-10 place-items-center rounded-full bg-slate-700">
-                  <ImageIcon className="h-5 w-5 text-slate-400" />
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-slate-300">Click to upload</p>
-                  <p className="mt-0.5 text-[11px] text-slate-500">PNG, JPG or WebP · Hero background</p>
-                </div>
+              <FormField label="Image URL" id="image_url" hint="External image link for hero background">
                 <input
-                  name="image"
-                  type="file"
-                  accept="image/png,image/jpeg,image/webp"
-                  className="hidden"
-                  onChange={(event) => {
-                    const file = event.target.files?.[0];
-                    if (!file) return;
-                    setRemoveImage(false);
-                    setPreview(URL.createObjectURL(file));
-                  }}
+                  id="image_url"
+                  name="image_url"
+                  type="url"
+                  className={inputClass}
+                  defaultValue={initialData?.image_url ?? ""}
+                  placeholder="https://example.com/hero-image.jpg"
+                  onChange={(event) => setPreview(event.target.value)}
                 />
-              </label>
-              {preview && !removeImage ? (
+              </FormField>
+              {preview ? (
                 <div className="relative">
                   <img src={preview} alt="Preview" className="w-full rounded-xl border border-slate-700 object-cover" />
                   <button
                     type="button"
-                    onClick={() => setRemoveImage(true)}
+                    onClick={() => { setPreview(""); }}
                     className="absolute right-2 top-2 grid h-7 w-7 place-items-center rounded-full bg-red-500/90 text-white shadow-lg transition-colors hover:bg-red-600"
                   >
                     <X className="h-3.5 w-3.5" />
