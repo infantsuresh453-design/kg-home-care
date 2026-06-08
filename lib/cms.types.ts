@@ -72,6 +72,9 @@ export type SeoPageRecord = {
   // Section 4: heading + content
   section4_heading: string | null;
   section4_content: string | null;
+  // Section 5: heading + content
+  section5_heading: string | null;
+  section5_content: string | null;
   faq: Array<{ question: string; answer: string }>;
   testimonials: Array<{
     name: string;

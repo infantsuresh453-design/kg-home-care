@@ -290,7 +290,32 @@ export default async function SeoPage({ params }: SeoPageProps) {
         </div>
       ) : null}
 
-      {/* ═══ 5. TESTIMONIALS ═══ */}
+      {/* ═══ 5. CONTENT BLOCK ═══ */}
+      {(page.section5_heading || page.section5_content) ? (
+        <div className="relative overflow-hidden bg-slate-50">
+          <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.3]" style={{ backgroundImage: "linear-gradient(to right, #cbd5e1 1px, transparent 1px), linear-gradient(to bottom, #cbd5e1 1px, transparent 1px)", backgroundSize: "50px 50px" }} />
+          <div className="pointer-events-none absolute -right-20 bottom-0 h-60 w-60 rounded-full bg-violet-100/30 blur-[80px]" />
+          <Section className="relative">
+            <ScrollReveal>
+              <div>
+                {page.section5_heading ? (
+                  <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
+                    {page.section5_heading}
+                  </h2>
+                ) : null}
+                {page.section5_content ? (
+                  <div
+                    className="mt-6 prose prose-slate max-w-none prose-headings:font-extrabold prose-headings:tracking-tight prose-h2:text-xl prose-h3:text-lg prose-p:leading-relaxed prose-p:text-slate-600 prose-li:text-slate-600 prose-strong:text-slate-900"
+                    dangerouslySetInnerHTML={{ __html: page.section5_content }}
+                  />
+                ) : null}
+              </div>
+            </ScrollReveal>
+          </Section>
+        </div>
+      ) : null}
+
+      {/* ═══ 6. TESTIMONIALS ═══ */}
       {page.testimonials.length > 0 ? (
         <div className="relative overflow-hidden bg-slate-50">
           <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.3]" style={{ backgroundImage: "radial-gradient(#94a3b8 1.2px, transparent 1.2px)", backgroundSize: "26px 26px" }} />
@@ -335,7 +360,7 @@ export default async function SeoPage({ params }: SeoPageProps) {
         </div>
       ) : null}
 
-      {/* ═══ 6. FAQ ═══ */}
+      {/* ═══ 7. FAQ ═══ */}
       {page.faq.length > 0 ? (
         <div className="relative overflow-hidden bg-white">
           <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.25]" style={{ backgroundImage: "linear-gradient(to right, #cbd5e1 1px, transparent 1px), linear-gradient(to bottom, #cbd5e1 1px, transparent 1px)", backgroundSize: "50px 50px" }} />
@@ -366,7 +391,7 @@ export default async function SeoPage({ params }: SeoPageProps) {
         </div>
       ) : null}
 
-      {/* ═══ 7. LEAD CAPTURE FORM ═══ */}
+      {/* ═══ 8. LEAD CAPTURE FORM ═══ */}
       <div className="relative overflow-hidden bg-slate-50">
         <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.3]" style={{ backgroundImage: "radial-gradient(#94a3b8 1.2px, transparent 1.2px)", backgroundSize: "28px 28px" }} />
         <div className="pointer-events-none absolute -right-28 top-1/2 h-60 w-60 -translate-y-1/2 rounded-full bg-blue-100/40 blur-[80px]" />

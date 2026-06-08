@@ -124,7 +124,7 @@ export function SeoPageForm({ action, initialData, submitLabel }: SeoPageFormPro
           <div>
             <p className="text-sm font-bold text-blue-300">Page Sections (new structure)</p>
             <p className="mt-1 text-xs leading-relaxed text-slate-400">
-              1. Hero → 2. Content + Image → 3. Content Block → 4. Content Block → 5. Testimonials → 6. FAQ → 7. Lead Form
+              1. Hero → 2. Content + Image → 3. Content Block → 4. Content Block → 5. Content Block → 6. Testimonials → 7. FAQ → 8. Lead Form
             </p>
           </div>
         </div>
@@ -292,8 +292,33 @@ export function SeoPageForm({ action, initialData, submitLabel }: SeoPageFormPro
             </div>
           </FormSection>
 
-          {/* Section 5: Testimonials */}
-          <FormSection icon={Star} title="Section 5 — Testimonials" badge="Reviews">
+          {/* Section 5: Heading + Content */}
+          <FormSection icon={FileText} title="Section 5 — Content Block" badge="Full Width">
+            <div className="grid gap-5">
+              <FormField label="Heading" id="section5_heading" hint="Section heading">
+                <input
+                  id="section5_heading"
+                  name="section5_heading"
+                  className={inputClass}
+                  defaultValue={initialData?.section5_heading ?? ""}
+                  placeholder="Additional Information"
+                />
+              </FormField>
+              <div className="space-y-1.5">
+                <label className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+                  Content
+                </label>
+                <RichTextEditor
+                  name="section5_content"
+                  defaultValue={initialData?.section5_content ?? ""}
+                  placeholder="Write content for section 5..."
+                />
+              </div>
+            </div>
+          </FormSection>
+
+          {/* Section 6: Testimonials */}
+          <FormSection icon={Star} title="Section 6 — Testimonials" badge="Reviews">
             <div className="space-y-1.5">
               <p className="text-[11px] text-slate-500">
                 Include locality names in reviews for hyperlocal SEO. Format: Name / Trip (locality) / Rating / Review
@@ -309,8 +334,8 @@ export function SeoPageForm({ action, initialData, submitLabel }: SeoPageFormPro
             </div>
           </FormSection>
 
-          {/* Section 6: FAQ */}
-          <FormSection icon={MessageSquare} title="Section 6 — FAQ" badge="Schema-Ready">
+          {/* Section 7: FAQ */}
+          <FormSection icon={MessageSquare} title="Section 7 — FAQ" badge="Schema-Ready">
             <div className="space-y-1.5">
               <p className="text-[11px] text-slate-500">
                 Target &ldquo;how much does service cost in [City]&rdquo; type queries. Each Q&A gets structured FAQ schema markup.
@@ -484,9 +509,10 @@ export function SeoPageForm({ action, initialData, submitLabel }: SeoPageFormPro
                 { num: "2", label: "Content + Image", color: "bg-emerald-500" },
                 { num: "3", label: "Content Block", color: "bg-amber-500" },
                 { num: "4", label: "Content Block", color: "bg-violet-500" },
-                { num: "5", label: "Testimonials", color: "bg-pink-500" },
-                { num: "6", label: "FAQ", color: "bg-amber-500" },
-                { num: "7", label: "Lead Form", color: "bg-blue-500" },
+                { num: "5", label: "Content Block", color: "bg-teal-500" },
+                { num: "6", label: "Testimonials", color: "bg-pink-500" },
+                { num: "7", label: "FAQ", color: "bg-amber-500" },
+                { num: "8", label: "Lead Form", color: "bg-blue-500" },
               ].map(({ num, label, color }) => (
                 <div key={num} className="flex items-center gap-3">
                   <span className={`grid h-5 w-5 shrink-0 place-items-center rounded text-[10px] font-bold text-white ${color}`}>

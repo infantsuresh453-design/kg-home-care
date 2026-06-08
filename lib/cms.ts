@@ -88,6 +88,8 @@ function mapSeoPage(row: Record<string, unknown>): SeoPageRecord {
     section3_content: safeHtml(row.section3_content as string | null),
     section4_heading: (row.section4_heading as string | null) ?? null,
     section4_content: safeHtml(row.section4_content as string | null),
+    section5_heading: (row.section5_heading as string | null) ?? null,
+    section5_content: safeHtml(row.section5_content as string | null),
     faq: normalizeFaq(row.faq),
     testimonials: normalizeTestimonials(row.testimonials),
     other_tags: (row.other_tags as string | null) ?? null,

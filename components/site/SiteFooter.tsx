@@ -6,7 +6,7 @@ import { WhatsAppIcon } from "./WhatsAppIcon";
 export function SiteFooter() {
   return (
     <footer className="border-t border-white/5 bg-[#07090f] text-white">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-3 lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
 
         {/* ── Brand + contact ── */}
         <div>
@@ -36,6 +36,14 @@ export function SiteFooter() {
             <li><Link href="/services" className="text-white/55 hover:text-white">Services</Link></li>
             <li><Link href="/about" className="text-white/55 hover:text-white">About Us</Link></li>
             <li><Link href="/contact" className="text-white/55 hover:text-white">Contact</Link></li>
+          </ul>
+        </div>
+
+        {/* ── Locations ── */}
+        <div>
+          <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-white/40">Locations</h3>
+          <ul className="mt-4 space-y-2.5 text-sm">
+            <li><Link href="/thoothukudi" className="text-white/55 hover:text-white">Thoothukudi</Link></li>
           </ul>
         </div>
 
