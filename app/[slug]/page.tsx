@@ -120,7 +120,7 @@ export default async function SeoPage({ params }: SeoPageProps) {
         {/* Dot grid overlay */}
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 z-[1] opacity-[0.08]"
+          className="pointer-events-none absolute inset-0 z-[1] opacity-[0.04]"
           style={{ backgroundImage: "radial-gradient(rgba(255,255,255,1) 1px, transparent 1px)", backgroundSize: "30px 30px" }}
         />
 
@@ -185,8 +185,10 @@ export default async function SeoPage({ params }: SeoPageProps) {
               </div>
             </div>
 
-            {/* Right — empty or decorative */}
-            <div className="hidden lg:block" />
+            {/* Right — Lead capture form */}
+            <div className="hidden lg:block">
+              <ServiceHeroForm />
+            </div>
           </div>
         </div>
       </section>
@@ -194,7 +196,7 @@ export default async function SeoPage({ params }: SeoPageProps) {
       {/* ═══ 2. CONTENT (left) + IMAGE (right) ═══ */}
       {(page.section2_heading || page.section2_content) ? (
         <div className="relative overflow-hidden bg-white">
-          <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.18]" style={{ backgroundImage: "radial-gradient(#94a3b8 1.2px, transparent 1.2px)", backgroundSize: "28px 28px" }} />
+          <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.09]" style={{ backgroundImage: "radial-gradient(#94a3b8 1.2px, transparent 1.2px)", backgroundSize: "28px 28px" }} />
           <div className="pointer-events-none absolute -right-20 top-1/4 h-72 w-72 rounded-full bg-blue-100/40 blur-[100px]" />
           <Section className="relative">
             <ScrollReveal>
@@ -241,11 +243,11 @@ export default async function SeoPage({ params }: SeoPageProps) {
       {/* ═══ 3. CONTENT BLOCK ═══ */}
       {(page.section3_heading || page.section3_content) ? (
         <div className="relative overflow-hidden bg-slate-50">
-          <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.6]" style={{ backgroundImage: "linear-gradient(to right, #cbd5e1 1px, transparent 1px), linear-gradient(to bottom, #cbd5e1 1px, transparent 1px)", backgroundSize: "50px 50px" }} />
+          <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.3]" style={{ backgroundImage: "linear-gradient(to right, #cbd5e1 1px, transparent 1px), linear-gradient(to bottom, #cbd5e1 1px, transparent 1px)", backgroundSize: "50px 50px" }} />
           <div className="pointer-events-none absolute -left-20 bottom-0 h-60 w-60 rounded-full bg-indigo-100/30 blur-[80px]" />
           <Section className="relative">
             <ScrollReveal>
-              <div className="mx-auto max-w-4xl">
+              <div>
                 {page.section3_heading ? (
                   <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
                     {page.section3_heading}
@@ -266,11 +268,11 @@ export default async function SeoPage({ params }: SeoPageProps) {
       {/* ═══ 4. CONTENT BLOCK ═══ */}
       {(page.section4_heading || page.section4_content) ? (
         <div className="relative overflow-hidden bg-white">
-          <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.5]" style={{ backgroundImage: "radial-gradient(#cbd5e1 1px, transparent 1px)", backgroundSize: "30px 30px" }} />
+          <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.25]" style={{ backgroundImage: "radial-gradient(#cbd5e1 1px, transparent 1px)", backgroundSize: "30px 30px" }} />
           <div className="pointer-events-none absolute -left-32 top-1/4 h-72 w-72 rounded-full bg-blue-100/20 blur-[100px]" />
           <Section className="relative">
             <ScrollReveal>
-              <div className="mx-auto max-w-4xl">
+              <div>
                 {page.section4_heading ? (
                   <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
                     {page.section4_heading}
@@ -291,7 +293,7 @@ export default async function SeoPage({ params }: SeoPageProps) {
       {/* ═══ 5. TESTIMONIALS ═══ */}
       {page.testimonials.length > 0 ? (
         <div className="relative overflow-hidden bg-slate-50">
-          <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.6]" style={{ backgroundImage: "radial-gradient(#94a3b8 1.2px, transparent 1.2px)", backgroundSize: "26px 26px" }} />
+          <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.3]" style={{ backgroundImage: "radial-gradient(#94a3b8 1.2px, transparent 1.2px)", backgroundSize: "26px 26px" }} />
           <div className="pointer-events-none absolute -left-20 bottom-0 h-60 w-60 rounded-full bg-blue-100/30 blur-[80px]" />
           <div className="pointer-events-none absolute right-16 top-12 h-24 w-24 rounded-full border-[3px] border-primary/12" />
           <Section
@@ -336,7 +338,7 @@ export default async function SeoPage({ params }: SeoPageProps) {
       {/* ═══ 6. FAQ ═══ */}
       {page.faq.length > 0 ? (
         <div className="relative overflow-hidden bg-white">
-          <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.5]" style={{ backgroundImage: "linear-gradient(to right, #cbd5e1 1px, transparent 1px), linear-gradient(to bottom, #cbd5e1 1px, transparent 1px)", backgroundSize: "50px 50px" }} />
+          <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.25]" style={{ backgroundImage: "linear-gradient(to right, #cbd5e1 1px, transparent 1px), linear-gradient(to bottom, #cbd5e1 1px, transparent 1px)", backgroundSize: "50px 50px" }} />
           <div className="pointer-events-none absolute -right-20 top-1/3 h-60 w-60 rounded-full bg-indigo-100/30 blur-[80px]" />
           <div className="pointer-events-none absolute left-8 top-6 h-20 w-20 rounded-full border-[3px] border-slate-300/50" />
           <Section
@@ -366,7 +368,7 @@ export default async function SeoPage({ params }: SeoPageProps) {
 
       {/* ═══ 7. LEAD CAPTURE FORM ═══ */}
       <div className="relative overflow-hidden bg-slate-50">
-        <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.6]" style={{ backgroundImage: "radial-gradient(#94a3b8 1.2px, transparent 1.2px)", backgroundSize: "28px 28px" }} />
+        <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.3]" style={{ backgroundImage: "radial-gradient(#94a3b8 1.2px, transparent 1.2px)", backgroundSize: "28px 28px" }} />
         <div className="pointer-events-none absolute -right-28 top-1/2 h-60 w-60 -translate-y-1/2 rounded-full bg-blue-100/40 blur-[80px]" />
         <Section className="relative">
           <div className="mx-auto max-w-5xl">

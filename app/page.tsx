@@ -56,7 +56,7 @@ export default async function HomePage() {
 
       {/* 4 · Common Problems — slate-50 */}
       <div className="relative overflow-hidden bg-slate-50">
-        <div aria-hidden className="pointer-events-none absolute inset-0" style={{ backgroundImage: "linear-gradient(to right, #cbd5e1 1px, transparent 1px), linear-gradient(to bottom, #cbd5e1 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
+        <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.15]" style={{ backgroundImage: "linear-gradient(to right, #cbd5e1 1px, transparent 1px), linear-gradient(to bottom, #cbd5e1 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
         <div className="pointer-events-none absolute -right-10 top-1/3 h-80 w-80 rounded-full bg-blue-200/40 blur-[80px]" />
         <div className="pointer-events-none absolute left-8 top-12 h-28 w-28 rounded-full border-[3px] border-slate-300/60" />
         <div className="pointer-events-none absolute right-20 bottom-10 h-16 w-16 rotate-12 rounded-md border-[3px] border-indigo-300/40" />
