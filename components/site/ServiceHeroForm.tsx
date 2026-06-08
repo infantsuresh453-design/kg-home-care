@@ -23,7 +23,7 @@ export function ServiceHeroForm() {
   return (
     <form
       action={formAction}
-      className="w-full rounded-3xl bg-white p-6 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] sm:p-8"
+      className="relative z-10 w-full rounded-3xl bg-white p-6 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] sm:p-8"
     >
       <div className="mb-6">
         <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-primary">

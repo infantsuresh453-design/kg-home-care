@@ -4,7 +4,7 @@ import { useActionState, useEffect } from "react";
 import { toast } from "sonner";
 import { createLeadAction } from "@/lib/actions/cms";
 import { DEFAULT_ACTION_STATE } from "@/lib/cms.types";
-import { User, Phone, MapPin, MessageSquare, ArrowRight, Loader2, Wrench } from "lucide-react";
+import { User, Phone, MapPin, MessageSquare, ArrowRight, Loader2 } from "lucide-react";
 
 const inputBase =
   "w-full rounded-xl border border-slate-200 bg-slate-50/80 px-4 py-3 pl-10 text-sm text-slate-800 placeholder:text-slate-400 outline-none transition-all focus:border-[#185FA5]/50 focus:bg-white focus:ring-2 focus:ring-[#185FA5]/10";
@@ -60,23 +60,19 @@ export function LeadCaptureForm() {
 
       {/* Service */}
       <div className="space-y-1.5">
-        <label htmlFor="lead-service" className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-slate-500">
-          <Wrench className="h-3.5 w-3.5" />
+        <label htmlFor="lead-service" className="text-xs font-semibold uppercase tracking-wide text-slate-500">
           Select a Service <span className="text-[#185FA5]">*</span>
         </label>
-        <div className="relative">
-          <Wrench className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
-          <select
-            id="lead-service"
-            name="service"
-            required
-            defaultValue=""
-            className={inputBase}
-          >
-            <option value="" disabled>Choose a service</option>
-            <option value="Washing Machine Service">Washing Machine Service</option>
-          </select>
-        </div>
+        <select
+          id="lead-service"
+          name="service"
+          required
+          defaultValue=""
+          className="w-full rounded-xl border border-slate-200 bg-slate-50/80 px-4 py-3 text-sm text-slate-800 outline-none transition-all focus:border-[#185FA5]/50 focus:bg-white focus:ring-2 focus:ring-[#185FA5]/10"
+        >
+          <option value="" disabled>Choose a service</option>
+          <option value="Washing Machine Service">Washing Machine Service</option>
+        </select>
       </div>
 
       {/* Issue */}
