@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   title: "Contact KG Home Care — Washing Machine Service Centre in Tuticorin",
   description:
     "Call or book a doorstep washing machine service visit. KG Home Care, 5A/394, Caldwell Colony 3rd Street, Tuticorin – 628008.",
+  keywords:
+    "contact kg home care, washing machine service booking tuticorin, washing machine repair phone number, doorstep service tuticorin",
   openGraph: {
     title: "Contact KG Home Care",
     description: "Book a doorstep washing machine service in Tuticorin.",

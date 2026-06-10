@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   title: "Service Areas — KG Home Care Washing Machine Service Centre",
   description:
     "KG Home Care washing machine service covers Tuticorin, Kovilpatti, Tiruchendur and surrounding villages across Tamil Nadu.",
+  keywords:
+    "washing machine service tuticorin, washing machine service kovilpatti, washing machine service tiruchendur, service areas kg home care, doorstep service tamil nadu",
   openGraph: {
     title: "Service Coverage — KG Home Care",
     description: "We serve Tuticorin and 14+ surrounding towns and villages.",

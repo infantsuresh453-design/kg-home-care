@@ -386,16 +386,17 @@ export function SeoPageForm({ action, initialData, submitLabel }: SeoPageFormPro
                     placeholder="washing machine service anna nagar, washing machine service near me"
                   />
                 </FormField>
-                <FormField label="Other head tags" id="other_tags">
-                  <input
-                    id="other_tags"
-                    name="other_tags"
-                    className={inputClass}
-                    defaultValue={initialData?.other_tags ?? ""}
-                    placeholder="Additional meta tags (optional)"
-                  />
-                </FormField>
               </div>
+              <FormField label="Other head tags" id="other_tags" hint="One tag per line — canonical:URL, robots:directives, og:property:value, or name:value">
+                <textarea
+                  id="other_tags"
+                  name="other_tags"
+                  className={textareaClass}
+                  defaultValue={initialData?.other_tags ?? ""}
+                  rows={4}
+                  placeholder={"canonical:https://www.kghomecare.in/washing-machine-service-tuticorin\nrobots:noindex, nofollow\nog:image:https://www.kghomecare.in/og-image.jpg"}
+                />
+              </FormField>
             </div>
           </FormSection>
         </div>

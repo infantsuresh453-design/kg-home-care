@@ -16,6 +16,8 @@ export const metadata: Metadata = {
   title: "KG Home Care — Washing Machine Service & Installation in Tuticorin",
   description:
     "Doorstep washing machine service, installation, drum cleaning, PCB & motor service in Tuticorin. Same day service.",
+  keywords:
+    "washing machine service tuticorin, washing machine repair tuticorin, washing machine installation tuticorin, drum cleaning tuticorin, kg home care, washing machine service centre tuticorin",
   openGraph: {
     title: "KG Home Care — Washing Machine Service Centre in Tuticorin",
     description:

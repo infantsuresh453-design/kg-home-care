@@ -29,7 +29,7 @@ const localBusinessSchema = {
   name: "KG Home Care",
   description:
     "Washing machine service, installation and drum cleaning in Tuticorin.",
-  telephone: "+91 99999 99999",
+  telephone: "+91 87788 38405",
   address: {
     "@type": "PostalAddress",
     streetAddress: "5A/394, Caldwell Colony 3rd Street",

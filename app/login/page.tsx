@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import { hasSupabaseEnv } from "@/lib/supabase/env";
 import { LoginForm } from "@/components/dashboard/LoginForm";
+
+export const metadata: Metadata = {
+  title: "Login — KG Home Care Dashboard",
+  robots: { index: false, follow: false },
+};
 
 type LoginPageProps = {
   searchParams: Promise<{ setup?: string }>;

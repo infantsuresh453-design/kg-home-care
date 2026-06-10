@@ -10,6 +10,8 @@ export const metadata: Metadata = {
   title: "About KG Home Care — Washing Machine Service Centre in Tuticorin",
   description:
     "Family-run washing machine service in Tuticorin since 2014. Certified technicians, genuine spare parts, and a written warranty on every service.",
+  keywords:
+    "about kg home care, washing machine service tuticorin, certified technicians tuticorin, genuine spare parts, washing machine experts",
   openGraph: {
     title: "About KG Home Care",
     description: "Family-run, focused only on washing machines — since 2014.",

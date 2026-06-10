@@ -94,10 +94,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         : "short" in service
           ? service.short
           : service.description || "",
+    keywords:
+      "keywords" in service && service.keywords
+        ? service.keywords
+        : `${service.name.toLowerCase()}, ${service.name.toLowerCase()} tuticorin, washing machine ${slug.replace(/-/g, " ")}, kg home care`,
+    alternates: {
+      canonical: `/services/${slug}`,
+    },
     openGraph: {
       title: `${service.name} — KG Home Care | Washing Machine Service Centre`,
       description:
         "short" in service ? service.short : service.description || "",
+      url: `/services/${slug}`,
       type: "article",
     },
   };

@@ -14,7 +14,6 @@ import {
   Wrench,
   Award,
   Phone,
-  MessageCircle,
 } from "lucide-react";
 import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 
@@ -30,20 +29,74 @@ export async function generateMetadata({ params }: SeoPageProps): Promise<Metada
     return {};
   }
 
+  // Parse other_tags field (format: "key:value" per line)
+  // Supported keys: canonical, robots, og:*
+  const otherTags = parseOtherTags(page.other_tags);
+
   return {
     title: page.meta_title || page.heading || page.title,
     description: page.meta_description || page.subheading || undefined,
     keywords: page.keywords || undefined,
     alternates: {
-      canonical: `/${page.slug}`,
+      canonical: otherTags.canonical || `/${page.slug}`,
     },
+    ...(otherTags.robots ? { robots: otherTags.robots } : {}),
     openGraph: {
       title: page.meta_title || page.heading || page.title,
       description: page.meta_description || page.subheading || undefined,
       url: `/${page.slug}`,
       type: page.template === "article" ? "article" : "website",
+      ...otherTags.openGraph,
     },
+    ...(otherTags.other.length > 0 ? { other: Object.fromEntries(otherTags.other) } : {}),
   };
+}
+
+/**
+ * Parse the other_tags textarea content.
+ * Format: one tag per line as "key:value"
+ * Supported keys:
+ * - canonical:URL — overrides the canonical URL
+ * - robots:directives — sets robots meta (e.g. "noindex, nofollow")
+ * - og:property:value — sets Open Graph tags (e.g. og:image:https://...)
+ * - anyname:value — added as generic <meta name="X" content="Y">
+ */
+function parseOtherTags(raw: string | null) {
+  const result: {
+    canonical: string | null;
+    robots: string | null;
+    openGraph: Record<string, string>;
+    other: [string, string][];
+  } = { canonical: null, robots: null, openGraph: {}, other: [] };
+
+  if (!raw) return result;
+
+  const lines = raw.split("\n").map((l) => l.trim()).filter(Boolean);
+
+  for (const line of lines) {
+    const colonIdx = line.indexOf(":");
+    if (colonIdx === -1) continue;
+
+    const key = line.slice(0, colonIdx).trim().toLowerCase();
+    const value = line.slice(colonIdx + 1).trim();
+
+    if (!value) continue;
+
+    if (key === "canonical") {
+      result.canonical = value;
+    } else if (key === "robots") {
+      result.robots = value;
+    } else if (key.startsWith("og:")) {
+      // e.g., og:image → image
+      const ogKey = key.slice(3);
+      const ogValue = value.startsWith(":") ? value.slice(1) : value;
+      result.openGraph[ogKey] = ogValue;
+    } else {
+      result.other.push([key, value]);
+    }
+  }
+
+  return result;
 }
 
 export default async function SeoPage({ params }: SeoPageProps) {
