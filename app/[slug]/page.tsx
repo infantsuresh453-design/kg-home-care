@@ -21,6 +21,8 @@ type SeoPageProps = {
   params: Promise<{ slug: string }>;
 };
 
+export const revalidate = 60;
+
 export async function generateMetadata({ params }: SeoPageProps): Promise<Metadata> {
   const { slug } = await params;
   const page = await getPublishedSeoPageBySlug(slug);
