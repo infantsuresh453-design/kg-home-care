@@ -34,16 +34,9 @@ export function SiteFooter() {
           <ul className="mt-4 space-y-2.5 text-sm">
             <li><Link href="/" className="text-white/55 hover:text-white">Home</Link></li>
             <li><Link href="/services" className="text-white/55 hover:text-white">Services</Link></li>
+            <li><Link href="/locations" className="text-white/55 hover:text-white">Locations</Link></li>
             <li><Link href="/about" className="text-white/55 hover:text-white">About Us</Link></li>
             <li><Link href="/contact" className="text-white/55 hover:text-white">Contact</Link></li>
-          </ul>
-        </div>
-
-        {/* ── Locations ── */}
-        <div>
-          <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-white/40">Locations</h3>
-          <ul className="mt-4 space-y-2.5 text-sm">
-            <li><Link href="/thoothukudi" className="text-white/55 hover:text-white">Thoothukudi</Link></li>
           </ul>
         </div>
 

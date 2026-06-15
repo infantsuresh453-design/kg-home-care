@@ -118,7 +118,7 @@ export function HeroForm() {
         </Button>
 
         <p className="mt-3 text-center text-sm font-medium text-white/70">
-          Visiting &amp; Service Charges – ₹400
+          Service Charges – ₹400
         </p>
       </div>
     </form>

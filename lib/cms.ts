@@ -232,3 +232,12 @@ export async function getPublishedSeoPageBySlug(slug: string) {
   const match = rows.find((row) => row.slug === slug && row.status === "Published");
   return match ? mapSeoPage(match) : null;
 }
+
+export async function getPublishedSeoPages() {
+  const rows = await queryTable("seo_pages");
+  if (!rows?.length) return [];
+  return rows
+    .filter((row) => row.status === "Published")
+    .map((row) => mapSeoPage(row))
+    .sort((a, b) => (a.location ?? a.title).localeCompare(b.location ?? b.title));
+}
