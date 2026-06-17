@@ -43,6 +43,9 @@ export default async function DashboardSeoPagesPage() {
                   </td>
                   <td className="px-5 py-4">
                     <div className="flex gap-2">
+                      <Link href={`/${page.slug}`} target="_blank" className="rounded-lg border border-blue-500/30 bg-blue-500/10 px-3 py-1.5 text-xs font-semibold text-blue-400 transition hover:bg-blue-500/20">
+                        View
+                      </Link>
                       <Link href={`/dashboard/seo-pages/${page.id}/edit`} className="rounded-lg border border-slate-600 bg-slate-800 px-3 py-1.5 text-xs font-semibold text-slate-200 transition hover:bg-slate-700">
                         Edit
                       </Link>

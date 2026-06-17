@@ -35,8 +35,10 @@ export async function generateMetadata({ params }: SeoPageProps): Promise<Metada
   // Supported keys: canonical, robots, og:*
   const otherTags = parseOtherTags(page.other_tags);
 
+  const titleText = page.meta_title || page.heading || page.title;
+
   return {
-    title: page.meta_title || page.heading || page.title,
+    title: titleText,
     description: page.meta_description || page.subheading || undefined,
     keywords: page.keywords || undefined,
     alternates: {
@@ -44,13 +46,16 @@ export async function generateMetadata({ params }: SeoPageProps): Promise<Metada
     },
     ...(otherTags.robots ? { robots: otherTags.robots } : {}),
     openGraph: {
-      title: page.meta_title || page.heading || page.title,
+      title: titleText,
       description: page.meta_description || page.subheading || undefined,
       url: `/${page.slug}`,
       type: page.template === "article" ? "article" : "website",
       ...otherTags.openGraph,
     },
-    ...(otherTags.other.length > 0 ? { other: Object.fromEntries(otherTags.other) } : {}),
+    other: {
+      ...(page.meta_title ? { title: page.meta_title } : {}),
+      ...(otherTags.other.length > 0 ? Object.fromEntries(otherTags.other) : {}),
+    },
   };
 }
 
@@ -76,6 +81,12 @@ function parseOtherTags(raw: string | null) {
   const lines = raw.split("\n").map((l) => l.trim()).filter(Boolean);
 
   for (const line of lines) {
+    // If the user just pasted a bare URL, assume it's for canonical
+    if (line.startsWith("http://") || line.startsWith("https://")) {
+      result.canonical = line;
+      continue;
+    }
+
     const colonIdx = line.indexOf(":");
     if (colonIdx === -1) continue;
 
